@@ -1,0 +1,35 @@
+{
+  "name": "anotherplanet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build && next export",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/anotherplanet/anotherplanet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/anotherplanet/anotherplanet/issues"
+  },
+  "homepage": "https://gitlab.com/anotherplanet/anotherplanet#README",
+  "dependencies": {
+    "next": "^3.0.0-beta16",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-markdown": "^2.5.0",
+    "react-no-ssr": "^1.1.0",
+    "three": "^0.86.0"
+  },
+  "devDependencies": {
+    "babel-plugin-inline-react-svg": "^0.4.0",
+    "babel-plugin-root-import": "^5.1.0",
+    "markdown-with-metadata-loader": "^0.2.0"
+  }
+}
