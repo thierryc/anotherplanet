@@ -1,0 +1,53 @@
+
+@font-face {
+  font-family: 'DejaWeb';
+  font-weight: normal;
+  font-style: normal;
+  src: url('DejaWeb.eot'); /* IE9 Compat Modes */
+  src:
+    local('DejaWeb Regular'),
+    local('DejaWeb-Regular'),
+    local('DejaWeb'),
+    url('fonts/DejaWeb.eot') format('eot'),
+    url('fonts/DejaWeb.woff') format('woff'),
+    url('fonts/DejaWeb.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DejaWeb';
+  font-weight: normal;
+  font-style: italic;
+  src: url('DejaWeb-Italic.eot');
+  src:
+    local('DejaWeb Italic'),
+    local('DejaWeb-Italic'),
+    url('fonts/DejaWeb-Italic.eot') format('eot'),
+    url('fonts/DejaWeb-Italic.woff') format('woff'),
+    url('fonts/DejaWeb-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DejaWeb';
+  font-weight: bold;
+  font-style: normal;
+  src: url('DejaWeb-Bold.eot');
+  src:
+    local('DejaWeb Bold'),
+    local('DejaWeb-Bold'),
+    url('fonts/DejaWeb-Bold.eot') format('eot'),
+    url('fonts/DejaWeb-Bold.woff') format('woff'),
+    url('fonts/DejaWeb-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DejaWeb';
+  font-weight: bold;
+  font-style: italic;
+  src: url('DejaWeb-BoldItalic.eot');
+  src:
+    local('DejaWeb Bold Italic'),
+    local('DejaWeb-BoldItalic'),
+    url('fonts/DejaWeb-BoldItalic.eot') format('eot'),
+    url('fonts/DejaWeb-BoldItalic.woff') format('woff'),
+    url('fonts/DejaWeb-BoldItalic.ttf') format('truetype');
+}

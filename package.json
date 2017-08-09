@@ -5,9 +5,11 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "test": "jest",
     "dev": "next",
-    "build": "next build && next export",
-    "start": "next start"
+    "build": "next export -h && next build && next export",
+    "start": "next start",
+    "serve": "next build && next export && http-server out"
   },
   "repository": {
     "type": "git",
@@ -20,16 +22,36 @@
   },
   "homepage": "https://gitlab.com/anotherplanet/anotherplanet#README",
   "dependencies": {
+    "classnames": "^2.2.5",
     "next": "^3.0.0-beta16",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-markdown": "^2.5.0",
     "react-no-ssr": "^1.1.0",
     "three": "^0.86.0"
   },
   "devDependencies": {
+    "@mapbox/babel-plugin-transform-jsxtreme-markdown": "^0.4.0",
+    "@material/layout-grid": "^0.4.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-css-modules-transform": "^1.2.7",
     "babel-plugin-inline-react-svg": "^0.4.0",
     "babel-plugin-root-import": "^5.1.0",
-    "markdown-with-metadata-loader": "^0.2.0"
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.6",
+    "babel-preset-env": "^1.6.0",
+    "enzyme": "^2.9.1",
+    "jest": "^20.0.4",
+    "node-sass": "^4.5.3",
+    "postcss": "^6.0.8",
+    "postcss-cssnext": "^3.0.2",
+    "processmd": "^3.1.3",
+    "react-addons-test-utils": "^15.6.0",
+    "react-test-renderer": "^15.6.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "roots": [
+      "test/"
+    ]
   }
 }

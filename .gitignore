@@ -1,3 +1,4 @@
+_crea
 node_modules
 .next
 out
@@ -5,3 +6,5 @@ out
 # OSX
 .DS_Store
 Icon
+
+bower_components
