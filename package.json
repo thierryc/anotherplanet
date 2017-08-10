@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "dev": "next",
-    "build": "next export -h && next build && next export",
+    "build": "next build && next export",
     "start": "next start",
     "serve": "next build && next export && http-server out"
   },
