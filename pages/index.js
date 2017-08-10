@@ -1,10 +1,13 @@
 import {Component} from 'react'
 import ReactDOM from 'react-dom'
 import dynamic from 'next/dynamic'
-// Layout
+// components
 import Layout from '~/components/layout'
 import { Container, Row, Cell } from '~/components/grid'
+import config from '~/components/site-config'
+// Styles
 import Scss from '../scss/main.scss'
+
 
 // ScrollHandler
 import ScrollHandler from '~/components/scrollHandler'
@@ -56,6 +59,7 @@ export default class Index extends Component {
       <Layout title='Another Planet - UX / UI and Code'>
         <ScrollHandler onScrollUpdate={this.scrollHandler}>
           <main className="homepage">
+
             <section className='hero'>
               <WebGlNoSSR timeControl={this.state.scrollY}></WebGlNoSSR>
               <div
@@ -86,18 +90,27 @@ export default class Index extends Component {
               <Row className="links">
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="contact">
-                    <p>Say hello: <a href="https://twitter.com/Autre_planete" target="_blank">Twitter</a>, <a href="https://medium.com/@anotherplanet" target="_blank">Medium</a>,   <a href="https://github.com/thierryc" target="_blank">Github</a>, <a href="https://vimeo.com/thierryc/collections" target="_blank">Vimeo</a>, <a href="https://fr.pinterest.com/apcx/" target="_blank">Pinterest</a>, <a href="https://www.linkedin.com/in/thierrycharbonnel/" target="_blank">Linkedin</a> or by <a href="mailto:hi@anotherplante.io">Email</a>.</p>
+                    <p>Say hello: {
+                        config.socialLinks.map((item, index, arr) => {
+                          let end
+                          if(index +1 < arr.length) end =', '
+                          else end = '.'
+                          return (
+                            <span><a href="{item.link}" target="_blank" className="social-links">{item.name}</a>{end}</span>
+                          )
+                        })
+                      }
+                    </p>
                   </div>
                 </Cell>
               </Row>
             </Container>
 
-
             <Container className="container">
 
               <Row className="code">
                 <Cell tablet={8} desktop={12}>
-                  <a href="">Browse the code of my web site on Gitlab</a>
+                  <p className="github"><a href="{config.socialLinks.publicRepository.link}" target="_blank">Browse the Code Repository of this web site on Github</a></p>
                 </Cell>
               </Row>
 
@@ -109,8 +122,14 @@ export default class Index extends Component {
         <style jsx>{`
 
             .hero {
-              height: 2500px;
+              height: 350vh;
               color: #ffffff;
+            }
+
+            @media (min-width: 576px) {
+              .hero {
+                height: 210vh;
+              }
             }
 
             .container {
@@ -124,7 +143,7 @@ export default class Index extends Component {
             .homepage :global(.ux),
             .homepage :global(.ui)
             .homepage :global(.links) {
-              min-height: 65vh;
+              min-height: 70vh;
             }
 
             .homepage :global(.code) {
@@ -237,6 +256,16 @@ export default class Index extends Component {
 
             :global(a:hover), :global(a:active), :global(a:focus) {
               text-shadow: #ffffff 0 0 10px;
+            }
+
+            .github {
+              font-size: 0.6666em;
+              text-align: center;
+              color: #5576A6;
+            }
+
+            .social-links {
+              text-transform: capitalize;
             }
 
 
