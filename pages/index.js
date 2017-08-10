@@ -155,6 +155,8 @@ export default class Index extends Component {
 
             .hero {
               height: 350vh;
+              max-width: 100%;
+              overflow: hidden;
               color: #ffffff;
             }
 
@@ -171,7 +173,7 @@ export default class Index extends Component {
 
             @keyframes arrow {
               0% { opacity: 0 }
-              40% { opacity: 1 }
+              40% { opacity: .5 }
               80% { opacity: 0 }
               100% { opacity: 0 }
             }
@@ -183,7 +185,7 @@ export default class Index extends Component {
 
             polyline.arrowMiddle {
               animation: arrow 2s infinite;
-            	animation-delay: -.5s;
+            	animation-delay: -0.5s;
             }
 
             polyline.arrowUp {
@@ -256,7 +258,7 @@ export default class Index extends Component {
             }
 
             .scroll-view.relase {
-              position: absolute;
+              position: fixed;
               opacity: 0;
             }
             .scroll-view.fix h1 {
