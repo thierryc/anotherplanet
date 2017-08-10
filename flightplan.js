@@ -35,6 +35,7 @@ plan.local('deploy', function(local) {
   local.log('Run clean and build');
   local.exec('yarn build');
   local.exec('cp googlec1262aecc8935940.html out/')
+  local.exec('cp .htaccess out/')
 
   local.log('Copy files to remote hosts');
   local.hostname(); // prints the hostname of localhost
@@ -64,5 +65,5 @@ plan.remote('deploy', function(remote) {
 });
 
 plan.remote('test', function(remote) {
-  
+
 });
