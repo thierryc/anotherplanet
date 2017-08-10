@@ -28,7 +28,7 @@ plan.local('deploy', function(local) {
   local.log('Create tag version');
   //local.exec('yarn version');
   local.exec('npm version patch -m "Upgrade to %s to deploy"') // npm is more powerfull than yarn to do this
-  var tag = local.exec('git describe').stdout;
+  var tag = local.exec('git describe').stdout.trim();
   tmpdir = 'apio_' + tag + '_' + new Date().getTime();
 
   local.log('Run clean and build');
