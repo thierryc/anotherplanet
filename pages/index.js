@@ -21,9 +21,9 @@ export default class Index extends Component {
   static getInitialProps ({ req }) {
     let userAgent
     if (process.browser) {
-      userAgent = navigator.userAgent
+      // userAgent = navigator.userAgent
     } else {
-      userAgent = req.headers['user-agent']
+      // userAgent = req.headers['user-agent']
     }
     return { userAgent }
   }
@@ -142,7 +142,7 @@ export default class Index extends Component {
 
               <Row className="code">
                 <Cell tablet={8} desktop={12}>
-                  <p className="github"><a href="{config.socialLinks.publicRepository.link}" target="_blank">Browse the Code Repository of this web site on Github</a><br/> { this.props.userAgent }</p>
+                  <p className="github"><a href="{config.socialLinks.publicRepository.link}" target="_blank">Browse the Code Repository of this web site on Github</a></p>
                 </Cell>
               </Row>
 
