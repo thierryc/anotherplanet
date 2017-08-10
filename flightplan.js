@@ -29,7 +29,8 @@ plan.local('deploy', function(local) {
   //local.exec('yarn version');
   local.exec('npm version patch -m "Upgrade to %s to deploy"') // npm is more powerfull than yarn to do this
   var tag = local.exec('git describe').stdout.trim();
-  tmpdir = 'apio_' + tag + '_' + new Date().getTime();
+  //tmpdir = 'apio_' + tag + '_' + new Date().getTime();
+  tmpdir = tag;
 
   local.log('Run clean and build');
   local.exec('yarn build');
@@ -45,13 +46,14 @@ plan.local('deploy', function(local) {
   local.with('cd out', function() {
     var files = local.find('. -type f', {silent: true}).stdout.split('\n');
     console.log(files, webRoot + tmpdir);
-    //local.transfer(files, webRoot + tmpDir);
+    local.transfer(files, webRoot + tmpDir);
   });
 });
 
 plan.remote('deploy', function(remote) {
   var webRoot = plan.runtime.options.webRoot;   // fly staging -> '/usr/local/www'
   var sudoUser = plan.runtime.options.sudoUser;
-  remote.log('Creat link to html folder to web root');
-  remote.exec('rm ')
+  remote.log('Create link to html folder to web root');
+  remote.exec('rm html')
+  remote.exec('ln -s '+ tmpdir + ' html')
 });
