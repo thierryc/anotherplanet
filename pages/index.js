@@ -122,7 +122,7 @@ export default class Index extends Component {
               <Row className="links">
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="contact">
-                    <p>Say hello: {
+                    <p><b>Say hello:</b> {
                         config.socialLinks.map((item, index, arr) => {
                           let end
                           if(index +1 < arr.length) end =', '
