@@ -1,6 +1,6 @@
 {
   "name": "anotherplanet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "private": true,
@@ -40,6 +40,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.6",
     "babel-preset-env": "^1.6.0",
     "enzyme": "^2.9.1",
+    "flightplan": "^0.6.17",
     "jest": "^20.0.4",
     "node-sass": "^4.5.3",
     "postcss": "^6.0.8",
