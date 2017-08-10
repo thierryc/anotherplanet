@@ -56,5 +56,6 @@ plan.remote('deploy', function(remote) {
   remote.log('Create link to html folder to web root');
   remote.exec('touch html')
   remote.exec('rm html')
+  remote.log(ln -s '+ tmpdir + ' html');
   remote.exec('ln -s '+ tmpdir + ' html')
 });
