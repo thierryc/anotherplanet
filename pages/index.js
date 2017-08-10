@@ -18,14 +18,34 @@ const WebGlNoSSR = dynamic(
 )
 
 export default class Index extends Component {
+  static getInitialProps ({ req }) {
+    let userAgent
+    if (process.browser) {
+      userAgent = navigator.userAgent
+    } else {
+      userAgent = req.headers['user-agent']
+    }
+    return { userAgent }
+  }
+
   constructor(props) {
     super(props)
-    this.state = {scrollY: 0, viewport: {
+    let scrollY = 0
+    if (typeof window !== 'undefined') {
+      scrollY = window.scrollY;
+    }
+    this.state = {scrollY: scrollY, viewport: {
       w: 0,
       h: 0
     }}
     this.scrollHandler = this.scrollHandler.bind(this)
     this.getViewport = this.getViewport.bind(this)
+  }
+
+  getInitialProps ({ req }) {
+    return req
+      ? { userAgent: req.headers['user-agent'] }
+      : { userAgent: navigator.userAgent }
   }
 
   componentDidMount() {
@@ -71,7 +91,19 @@ export default class Index extends Component {
                 <div className='baseline'>
                   <p>by Thierry Charbonnel <span className={ Scss.xsInlineNone }>–</span><span className={ Scss.xsInline }><br/></span> UX / UI and Code Designer</p>
                 </div>
-                <p className='hello'>Hello world! {this.state.scrollY}</p>
+              </div>
+              <div className={'scroll-icon ' + ((this.state.scrollY < this.state.viewport.h * 2) ? 'fix' : 'relase')}>
+
+                <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Page-1" stroke="none" fill="none" fillRule="evenodd">
+                    <g id="scroll-icon">
+                      <polyline className="arrowBottom" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" points="38.5566864 25.8789063 24.4145508 40.0210419 10.2724152 25.8789062"></polyline>
+                      <polyline className="arrowMiddle" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" points="38.5566864 17.8789063 24.4145508 32.0210419 10.2724152 17.8789062"></polyline>
+                      <polyline className="arrowUp" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" points="38.5566864 9.87890625 24.4145508 24.0210419 10.2724152 9.87890625"></polyline>
+                    </g>
+                  </g>
+                </svg>
+
               </div>
             </section>
 
@@ -96,7 +128,7 @@ export default class Index extends Component {
                           if(index +1 < arr.length) end =', '
                           else end = '.'
                           return (
-                            <span><a href={ item.link } target="_blank" className="social-links">{item.name}</a>{end}</span>
+                            <span key={index} ><a href={ item.link } target="_blank" className="social-links">{item.name}</a>{end}</span>
                           )
                         })
                       }
@@ -110,7 +142,7 @@ export default class Index extends Component {
 
               <Row className="code">
                 <Cell tablet={8} desktop={12}>
-                  <p className="github"><a href="{config.socialLinks.publicRepository.link}" target="_blank">Browse the Code Repository of this web site on Github</a></p>
+                  <p className="github"><a href="{config.socialLinks.publicRepository.link}" target="_blank">Browse the Code Repository of this web site on Github</a><br/> { this.props.userAgent }</p>
                 </Cell>
               </Row>
 
@@ -124,6 +156,39 @@ export default class Index extends Component {
             .hero {
               height: 350vh;
               color: #ffffff;
+            }
+
+            .scroll-icon {
+              position: absolute;
+              bottom: 24px;
+              width: 100%;
+              margin: 0 auto;
+            }
+
+            .scroll-icon.fix {
+              position: fixed;
+            }
+
+            @keyframes arrow {
+              0% { opacity: 0 }
+              40% { opacity: 1 }
+              80% { opacity: 0 }
+              100% { opacity: 0 }
+            }
+
+            polyline.arrowBottom {
+              animation: arrow 2s infinite;
+            	animation-delay: 0s;
+            }
+
+            polyline.arrowMiddle {
+              animation: arrow 2s infinite;
+            	animation-delay: -.5s;
+            }
+
+            polyline.arrowUp {
+              animation: arrow 2s infinite;
+            	animation-delay: -1s;
             }
 
             @media (min-width: 576px) {
@@ -148,7 +213,7 @@ export default class Index extends Component {
 
             .homepage :global(.code) {
               text-align: center;
-
+              padding-top: 50vh;
             }
 
             .hero {
@@ -191,7 +256,7 @@ export default class Index extends Component {
             }
 
             .scroll-view.relase {
-              position: fixed;
+              position: absolute;
               opacity: 0;
             }
             .scroll-view.fix h1 {
