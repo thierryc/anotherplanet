@@ -46,7 +46,7 @@ plan.local('deploy', function(local) {
   local.with('cd out', function() {
     var files = local.find('. -type f', {silent: true}).stdout.split('\n');
     console.log(files, webRoot + tmpdir);
-    local.transfer(files, webRoot + tmpDir);
+    local.transfer(files, webRoot + tmpdir);
   });
 });
 
