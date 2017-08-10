@@ -96,7 +96,7 @@ export default class Index extends Component {
                           if(index +1 < arr.length) end =', '
                           else end = '.'
                           return (
-                            <span><a href="{item.link}" target="_blank" className="social-links">{item.name}</a>{end}</span>
+                            <span><a href={ item.link } target="_blank" className="social-links">{item.name}</a>{end}</span>
                           )
                         })
                       }
