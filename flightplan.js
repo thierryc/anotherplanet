@@ -34,7 +34,8 @@ plan.local('deploy', function(local) {
   local.log('Run clean and build');
   local.exec('yarn build');
   local.exec('cp googlec1262aecc8935940.html out/')
-  tmpdir = 'apio_' + gitTag.toString() + '_' + new Date().getTime();
+  tmpdir = 'apio_' + gitTag + '_' + new Date().getTime();
+  
   local.log('tmpdir: ' + tmpdir);
 
   local.log('Copy files to remote hosts');
