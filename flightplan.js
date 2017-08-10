@@ -45,8 +45,9 @@ plan.local('deploy', function(local) {
   console.log(webRoot);
 
   local.with('cd out', function() {
+    local.exec('touch ./version.txt');
+    local.exec('echo "'+ tag +'" >> ./version.txt');
     var files = local.find('. -type f', {silent: true}).stdout.split('\n');
-    console.log(files, webRoot + '/' + tmpdir);
     local.transfer(files, webRoot + '/' + tmpdir);
   });
 });
