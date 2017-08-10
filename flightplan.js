@@ -34,7 +34,7 @@ plan.local('deploy', function(local) {
 
   local.log('Run clean and build');
   local.exec('yarn build');
-  local.exec('cp googlec1262aecc8935940.html out/')
+  local.exec('cp google.html out/' + config.production.googleVerificationFile + '.html')
   local.exec('cp .htaccess out/')
 
   local.log('Copy files to remote hosts');
