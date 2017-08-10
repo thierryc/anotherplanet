@@ -54,6 +54,7 @@ plan.remote('deploy', function(remote) {
   var webRoot = plan.runtime.options.webRoot;   // fly staging -> '/usr/local/www'
   var sudoUser = plan.runtime.options.sudoUser;
   remote.log('Create link to html folder to web root');
+  remote.exec('touch html')
   remote.exec('rm html')
   remote.exec('ln -s '+ tmpdir + ' html')
 });
