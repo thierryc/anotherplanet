@@ -9,7 +9,8 @@
     "dev": "next",
     "build": "next build && next export",
     "start": "next start",
-    "serve": "next build && next export && http-server out"
+    "serve": "next build && next export && http-server out",
+    "deploy": "fly deploy:production"
   },
   "repository": {
     "type": "git",
