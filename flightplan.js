@@ -29,12 +29,12 @@ plan.local('deploy', function(local) {
   //local.exec('yarn version');
   local.exec('npm version patch -m "Upgrade to %s to deploy"') // npm is more powerfull than yarn to do this
   var gitTag = local.exec('git describe');
-  local.log('gitTag:' + gitTag);
+  local.log(gitTag);
 
   local.log('Run clean and build');
   local.exec('yarn build');
   local.exec('cp googlec1262aecc8935940.html out/')
-  tmpdir = 'apio_' +  gitTag + '_' + new Date().getTime();
+  tmpdir = 'apio_' + gitTag + '_' + new Date().getTime();
   local.log('tmpdir: ' + tmpdir);
 
   local.log('Copy files to remote hosts');
