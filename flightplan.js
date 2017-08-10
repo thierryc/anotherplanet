@@ -13,7 +13,7 @@ plan.target('production', {
   sudoUser: config.production.sudoUser
 });
 
-var repositoryDir;
+var tmpdir;
 
 // run commands on localhost
 plan.local('deploy', function(local) {
@@ -33,8 +33,9 @@ plan.local('deploy', function(local) {
 
   local.log('Run clean and build');
   local.exec('yarn build');
-  repositoryDir = 'apio_' +  gitTag + '_' + new Date().getTime();
-  local.log('repositoryDir: ' + repositoryDir);
+  local.exec('cp googlec1262aecc8935940.html out/')
+  tmpdir = 'apio_' +  gitTag + '_' + new Date().getTime();
+  local.log('tmpdir: ' + tmpdir);
 
   local.log('Copy files to remote hosts');
   local.hostname(); // prints the hostname of localhost
@@ -45,7 +46,7 @@ plan.local('deploy', function(local) {
 
   local.with('cd out', function() {
     var files = local.find('. -type f', {silent: true}).stdout.split('\n');
-    console.log(files, webRoot + tmpDir);
+    console.log(files, webRoot + tmpdir);
     //local.transfer(files, webRoot + tmpDir);
   });
 });
@@ -53,5 +54,6 @@ plan.local('deploy', function(local) {
 plan.remote('deploy', function(remote) {
   var webRoot = plan.runtime.options.webRoot;   // fly staging -> '/usr/local/www'
   var sudoUser = plan.runtime.options.sudoUser;
-  remote.log('Move folder to web root');
+  remote.log('Creat link to html folder to web root');
+  remote.exec('rm ')
 });
