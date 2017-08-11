@@ -20,9 +20,9 @@ export default class ScrollHandler extends Component {
     let ticking
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        //doSomething(last_known_scroll_position);
-        console.log('scroll event')
-        //console.log(e, last_known_scroll_position)
+        // doSomething(last_known_scroll_position);
+        // console.log('scroll event')
+        // console.log(e, last_known_scroll_position)
         this.props.onScrollUpdate(e, last_known_scroll_position)
         ticking = false
       });

@@ -64,7 +64,7 @@ export default class WebGl extends Component {
     	'static/textures/logo-another-planet-white.png', // 'static/textures/uv.jpg',
     	// Function when resource is loaded
     	(texture) => {
-        console.log('isload');
+        // console.log('isload');
     		this.apLogoCoposent.material.map = texture
         this.three.scene.add( this.aplogo )
     	}
@@ -120,7 +120,6 @@ export default class WebGl extends Component {
       this.three.camera.position.z = zpos * -5000 + 6000
       this.aplogo.position.y = zpos * -400 + 100
       this.aplogo.position.z = zpos * -4500 + 4500
-      console.log(1 - zpos);
       this.apLogoCoposent.material.opacity = 1 - zpos //or any other value you like
 
       //this.aplogo.rotation.y = (zpos * -0.5) + 0.5
