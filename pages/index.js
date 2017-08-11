@@ -90,7 +90,7 @@ export default class Index extends Component {
                   <h1>Another Planet.io</h1>
                 </div>
                 <div className='baseline'>
-                  <p>by Thierry Charbonnel <span className={ Scss.xsInlineNone }>–</span><span className={ Scss.xsInline }><br/></span> UX / UI and Code Designer</p>
+                  <p>Thierry Charbonnel <span className={ Scss.xsInlineNone }>–</span><span className={ Scss.xsInline }><br/></span> UX / UI and Code Designer</p>
                 </div>
               </div>
               <div className={'scroll-icon ' + ((this.state.scrollY < this.state.viewport.h * 2) ? 'fix' : 'relase')}>
