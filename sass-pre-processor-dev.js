@@ -1,6 +1,7 @@
 const sass = require('node-sass')
 
 module.exports = (data, filename) => {
+  console.log(data, filename);
   const css = sass.renderSync({
     data,
     file: filename,

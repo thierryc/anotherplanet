@@ -12,6 +12,12 @@ import Scss from '../scss/main.scss'
 // SVG
 import Satellite from '../svgs/satellite.svg'
 import Telescope from '../svgs/telescope.svg'
+// SVG Logos
+import ReactLogo from '../svgs/react-logo.svg'
+import NextLogo from '../svgs/next-logo.svg'
+import JsLogo from '../svgs/js-logo.svg'
+import SketchLogo from '../svgs/sketch-logo.svg'
+import ThreejsLogo from '../svgs/threejs-logo.svg'
 
 const WebGlNoSSR = dynamic(
   import('../components/webGl'),
@@ -113,7 +119,7 @@ export default class Index extends Component {
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="intro">
                     <p>I am Thierry Charbonnel, a Designer based in NYC. Specializing in front-end web development, prototyping and UI design using, React, WebGL, JavaScript and Sketch app.</p>
-                    <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic) and graphic design.</p>
+                    <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic) and graphic design systems.</p>
                     <p>I am thinking about the intersection of technology + design.</p>
                     <p>Previously at Autre Planète* Design Studio Paris (founder).</p>
                     <p>My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.</p>
@@ -145,16 +151,28 @@ export default class Index extends Component {
               </Row>
             </Container>
 
-            <Container>
-
-              <Row className="code">
+            <Container className="code">
+              <Row>
                 <Cell tablet={8} desktop={12}>
                   <Telescope />
                   <p>Beyond the scene</p>
-                  <p className="github"><a href="{config.socialLinks.publicRepository.link}" target="_blank">Browse this React, THREE and Next.js website code on Github</a></p>
+                  <p className="github"><a href={ config.publicRepository } target="_blank">Browse this React, Three.js and Next.js website code on Github</a></p>
                 </Cell>
               </Row>
-
+              <Row>
+                <Cell phone={2} tablet={2} desktop={3}>
+                  <ReactLogo />
+                </Cell>
+                <Cell phone={2} tablet={2} desktop={3}>
+                  <NextLogo />
+                </Cell>
+                <Cell phone={2} tablet={2} desktop={3}>
+                  <JsLogo />
+                </Cell>
+                <Cell phone={2} tablet={2} desktop={3}>
+                  <ThreejsLogo />
+                </Cell>
+              </Row>
             </Container>
 
           </main>
@@ -221,7 +239,7 @@ export default class Index extends Component {
 
             .homepage :global(.code) {
               text-align: center;
-              padding-top: 50vh;
+              padding-top: 30vh;
             }
 
             .icon-separator {
