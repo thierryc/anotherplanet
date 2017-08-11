@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 // components
 import Layout from '~/components/layout'
 import { Container, Row, Cell } from '~/components/grid'
-import config from '~/components/site-config'
+import config from '../site-config'
 // ScrollHandler component
 import ScrollHandler from '~/components/scrollHandler'
 // Styles
@@ -18,6 +18,8 @@ import NextLogo from '../svgs/next-logo.svg'
 import JsLogo from '../svgs/js-logo.svg'
 import SketchLogo from '../svgs/sketch-logo.svg'
 import ThreejsLogo from '../svgs/threejs-logo.svg'
+
+import { logEvent } from '../utils/analytics'
 
 const WebGlNoSSR = dynamic(
   import('../components/webGl'),
@@ -41,12 +43,17 @@ export default class Index extends Component {
     if (typeof window !== 'undefined') {
       scrollY = window.scrollY;
     }
-    this.state = {scrollY: scrollY, viewport: {
-      w: 0,
-      h: 0
-    }}
+    this.state = {
+      scrollY: scrollY,
+      viewport: {
+        w: 0,
+        h: 0
+      },
+      gaViewport: false
+    }
     this.scrollHandler = this.scrollHandler.bind(this)
     this.getViewport = this.getViewport.bind(this)
+
   }
 
   getInitialProps ({ req }) {
@@ -68,6 +75,18 @@ export default class Index extends Component {
     this.setState({
       scrollY: last_known_scroll_position
     });
+    if(!this.state.gaViewport && last_known_scroll_position > this.state.viewport.h) {
+      this.setState({
+        gaViewport: true
+      })
+      logEvent('scroll-index', 'viewport')
+    }
+    if(this.state.gaViewport && last_known_scroll_position <= 0) {
+      this.setState({
+        gaViewport: false
+      })
+      logEvent('scroll-index', 'top')      
+    }
   }
 
   getViewport() {
@@ -119,7 +138,7 @@ export default class Index extends Component {
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="intro">
                     <p>I am Thierry Charbonnel, a Designer based in NYC. Specializing in front-end web development, prototyping and UI design using, React, WebGL, JavaScript and Sketch app.</p>
-                    <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic) and graphic design systems.</p>
+                    <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design and Data Visualization.</p>
                     <p>I am thinking about the intersection of technology + design.</p>
                     <p>Previously at Autre Planète* Design Studio Paris (founder).</p>
                     <p>My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.</p>

@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 // components
 import Layout from '~/components/layout'
 import { Container, Row, Cell } from '~/components/grid'
-import config from '~/components/site-config'
+import config from '../site-config'
 // ScrollHandler component
 import ScrollHandler from '~/components/scrollHandler'
 // Styles
