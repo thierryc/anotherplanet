@@ -44,17 +44,17 @@ export default class WebGl extends Component {
     /*
     * AP logo
     **/
-    const apLogo = {}
+    this.apLogoCoposent = {}
 
-    //apLogo.image = new THREE.TextureLoader().load("static/textures/logo-another-planet-white.png" );
+    //this.apLogoCoposent.image = new THREE.TextureLoader().load("static/textures/logo-another-planet-white.png" );
 
-    apLogo.geometry = new THREE.PlaneGeometry(512, 512)
-    apLogo.material = new THREE.MeshBasicMaterial( {
+    this.apLogoCoposent.geometry = new THREE.PlaneGeometry(512, 512)
+    this.apLogoCoposent.material = new THREE.MeshBasicMaterial( {
       // color: 0xffffff,
       // side: THREE.DoubleSide,
       transparent: true
     } );
-    this.aplogo = new THREE.Mesh( apLogo.geometry, apLogo.material )
+    this.aplogo = new THREE.Mesh( this.apLogoCoposent.geometry, this.apLogoCoposent.material )
     this.aplogo.position.x = 0;
 
     var loader = new THREE.TextureLoader()
@@ -65,12 +65,12 @@ export default class WebGl extends Component {
     	// Function when resource is loaded
     	(texture) => {
         console.log('isload');
-    		apLogo.material.map = texture
+    		this.apLogoCoposent.material.map = texture
         this.three.scene.add( this.aplogo )
     	}
     )
     this.three.stars = []
-    for (var z = -2000; z < 10000; z += 20 ) {
+    for (var z = -1000; z < 10000; z += 20 ) {
 			// Make a sphere (exactly the same as before).
 			const sphere = new THREE.Mesh(star.geometry, star.material)
 			// This time we give the sphere random x and y positions between -500 and 500
@@ -120,6 +120,9 @@ export default class WebGl extends Component {
       this.three.camera.position.z = zpos * -5000 + 6000
       this.aplogo.position.y = zpos * -400 + 100
       this.aplogo.position.z = zpos * -4500 + 4500
+      console.log(1 - zpos);
+      this.apLogoCoposent.material.opacity = 1 - zpos //or any other value you like
+
       //this.aplogo.rotation.y = (zpos * -0.5) + 0.5
       this.three.camera.position.y = this.props.timeControl * -0.5
       this.three.renderer.render(this.three.scene, this.three.camera);

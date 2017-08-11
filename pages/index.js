@@ -164,7 +164,7 @@ export default class Index extends Component {
 
             /* mobile first */
             .hero {
-              height: 350vh;
+              height: 360vh;
               max-width: 100%;
               overflow: hidden;
               color: #ffffff;
