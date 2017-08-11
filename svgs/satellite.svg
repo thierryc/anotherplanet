@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" version="1.1" viewBox="0 0 80 80">
+  <g id="Page-1" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+    <g id="satelite" stroke="#FFFFFF" stroke-width="2">
+      <g id="satelit" transform="translate(17.000000, 17.000000)">
+        <ellipse id="Oval-2" cx="36.892" cy="10" rx="10.108" ry="10"/>
+        <path id="Oval-2" stroke-linecap="round" stroke-linejoin="round" d="M42.9569892,10 C42.9569892,6.6862915 40.2418129,4 36.8924731,4" transform="translate(36.892473, 10.000000) rotate(-315.000000) translate(-36.892473, -10.000000)"/>
+        <path id="Line-2" stroke-linecap="round" stroke-linejoin="round" d="M35.1236559,13.75 L3.79032258,44.25"/>
+        <path id="Line-2-Copy" stroke-linecap="round" stroke-linejoin="round" d="M28.0483871,15 L10.6129032,28.5"/>
+        <path id="Line-2-Copy-2" stroke-linecap="round" stroke-linejoin="round" d="M32.5967742,1 L0,20"/>
+        <path id="Line-2-Copy-3" stroke-linecap="round" stroke-linejoin="round" d="M44.9784946,15.75 L26.7849462,47"/>
+      </g>
+    </g>
+  </g>
+</svg>

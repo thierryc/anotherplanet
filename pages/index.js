@@ -5,12 +5,13 @@ import dynamic from 'next/dynamic'
 import Layout from '~/components/layout'
 import { Container, Row, Cell } from '~/components/grid'
 import config from '~/components/site-config'
+// ScrollHandler component
+import ScrollHandler from '~/components/scrollHandler'
 // Styles
 import Scss from '../scss/main.scss'
-
-
-// ScrollHandler
-import ScrollHandler from '~/components/scrollHandler'
+// SVG
+import Satellite from '../svgs/satellite.svg'
+import Telescope from '../svgs/telescope.svg'
 
 const WebGlNoSSR = dynamic(
   import('../components/webGl'),
@@ -107,23 +108,29 @@ export default class Index extends Component {
               </div>
             </section>
 
-            <Container className="container">
-              <Row className="ux">
+            <Container className="ux">
+              <Row>
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="intro">
+                    <p>I am Thierry Charbonnel, a Designer based in NYC. Specializing in front-end web development, prototyping and UI design using, React, WebGL, JavaScript and Sketch app.</p>
+                    <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic) and graphic design.</p>
                     <p>I am thinking about the intersection of technology + design.</p>
-                    <p>My focus has been on User experience (UX), responsive design, componentized systems (atomic) and graphic design.</p>
+                    <p>Previously at Autre Planète* Design Studio Paris (founder).</p>
+                    <p>My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.</p>
                   </div>
                 </Cell>
               </Row>
             </Container>
 
-            <Container className="container">
-              <Row className="links">
+            <Container className="links">
+              <Row>
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="contact">
+                    <p className="icon-separator"><Satellite /></p>
+                    <p>I’m always happy <a href={ config.socialLinks.email.link }>to be involved</a> into interesting projects.</p>
                     <p><b>Say hello:</b> {
-                        config.socialLinks.map((item, index, arr) => {
+                        Object.keys(config.socialLinks).map((key, index, arr) => {
+                          const item = config.socialLinks[key]
                           let end
                           if(index +1 < arr.length) end =', '
                           else end = '.'
@@ -138,11 +145,13 @@ export default class Index extends Component {
               </Row>
             </Container>
 
-            <Container className="container">
+            <Container>
 
               <Row className="code">
                 <Cell tablet={8} desktop={12}>
-                  <p className="github"><a href="{config.socialLinks.publicRepository.link}" target="_blank">Browse the Code Repository of this web site on Github</a></p>
+                  <Telescope />
+                  <p>Beyond the scene</p>
+                  <p className="github"><a href="{config.socialLinks.publicRepository.link}" target="_blank">Browse this React, THREE and Next.js website code on Github</a></p>
                 </Cell>
               </Row>
 
@@ -153,13 +162,23 @@ export default class Index extends Component {
 
         <style jsx>{`
 
+            /* mobile first */
             .hero {
               height: 350vh;
               max-width: 100%;
               overflow: hidden;
               color: #ffffff;
+              text-align: center;
             }
 
+            /* desktop */
+            @media (min-width: 576px) {
+              .hero {
+                height: 210vh;
+              }
+            }
+
+            /*  arrow icon */
             .scroll-icon {
               position: absolute;
               bottom: 24px;
@@ -171,6 +190,7 @@ export default class Index extends Component {
               position: fixed;
             }
 
+            /*  arrow animation */
             @keyframes arrow {
               0% { opacity: 0 }
               40% { opacity: .5 }
@@ -193,20 +213,6 @@ export default class Index extends Component {
             	animation-delay: -1s;
             }
 
-            @media (min-width: 576px) {
-              .hero {
-                height: 210vh;
-              }
-            }
-
-            .container {
-              z-index: 1;
-            }
-
-            .plugins-link {
-              text-align: center;
-            }
-
             .homepage :global(.ux),
             .homepage :global(.ui)
             .homepage :global(.links) {
@@ -218,7 +224,7 @@ export default class Index extends Component {
               padding-top: 50vh;
             }
 
-            .hero {
+            .icon-separator {
               text-align: center;
             }
 
@@ -263,6 +269,10 @@ export default class Index extends Component {
             }
             .scroll-view.fix h1 {
               letter-spacing: .12em;
+            }
+
+            .plugins-link {
+              text-align: center;
             }
 
             h1 {
@@ -317,7 +327,7 @@ export default class Index extends Component {
 
             @media (min-width: 576px) {
               .intro p, .contact p {
-                font-size: 48px;
+                font-size: 32px;
               }
             }
 
@@ -326,15 +336,12 @@ export default class Index extends Component {
             }
 
             .github {
-              font-size: 0.6666em;
               text-align: center;
-              color: #5576A6;
             }
 
             .social-links {
               text-transform: capitalize;
             }
-
 
             `}</style>
 

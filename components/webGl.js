@@ -48,13 +48,12 @@ export default class WebGl extends Component {
 
     //apLogo.image = new THREE.TextureLoader().load("static/textures/logo-another-planet-white.png" );
 
-    apLogo.geometry = new THREE.PlaneGeometry(400, 400)
+    apLogo.geometry = new THREE.PlaneGeometry(512, 512)
     apLogo.material = new THREE.MeshBasicMaterial( {
       // color: 0xffffff,
       // side: THREE.DoubleSide,
       transparent: true
     } );
-
     this.aplogo = new THREE.Mesh( apLogo.geometry, apLogo.material )
     this.aplogo.position.x = 0;
 
