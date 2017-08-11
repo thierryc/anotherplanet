@@ -33,7 +33,7 @@ export default class CssLoader extends Component {
   render() {
     // deferred-styles
     const { href, id } = this.props
-    console.log(href, id);
+    //console.log(href, id);
     return (
      <div>
        <noscript id={id}>
