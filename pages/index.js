@@ -85,7 +85,7 @@ export default class Index extends Component {
       this.setState({
         gaViewport: false
       })
-      logEvent('scroll-index', 'top')      
+      logEvent('scroll-index', 'top')
     }
   }
 
