@@ -19,11 +19,21 @@ import JsLogo from '../svgs/js-logo.svg'
 import SketchLogo from '../svgs/sketch-logo.svg'
 import ThreejsLogo from '../svgs/threejs-logo.svg'
 
+import ContactList from '~/components/pages/contact-list'
+
 import { logEvent } from '../utils/analytics'
 
 const WebGlNoSSR = dynamic(
   import('../components/webGl'),
-  { ssr: false }
+  { ssr: false,
+    loading: () => (
+      <p><span>...</span>
+        <style jsx>{`
+          
+        `}</style>
+      </p>
+    )
+  }
 )
 
 export default class Index extends Component {
@@ -107,9 +117,9 @@ export default class Index extends Component {
           <main className="homepage">
 
             <section className='hero'>
-              <WebGlNoSSR timeControl={this.state.scrollY}></WebGlNoSSR>
+              <WebGlNoSSR timeControl={this.state.scrollY} />
               <div
-                className={'scroll-view ' + ((this.state.scrollY < this.state.viewport.h) ? 'fix' : 'relase')}
+                className={'scroll-view ' + ((this.state.scrollY > this.state.viewport.h) ? 'relase' : (this.state.scrollY < this.state.viewport.h) ? 'fix' : '')}
                 >
                 <div className='main-name'>
                   <h1>Another Planet.io</h1>
@@ -153,17 +163,7 @@ export default class Index extends Component {
                   <div className="contact">
                     <p className="icon-separator"><Satellite /></p>
                     <p>I’m always happy <a href={ config.socialLinks.email.link }>to be involved</a> into interesting projects.</p>
-                    <p><b>Say hello:</b> {
-                        Object.keys(config.socialLinks).map((key, index, arr) => {
-                          const item = config.socialLinks[key]
-                          let end
-                          if(index +1 < arr.length) end =', '
-                          else end = '.'
-                          return (
-                            <span key={index} ><a href={ item.link } target="_blank" className="social-links">{item.name}</a>{end}</span>
-                          )
-                        })
-                      }
+                    <p><b>Say hello:</b> <ContactList data={ config.socialLinks }/>
                     </p>
                   </div>
                 </Cell>
@@ -266,13 +266,24 @@ export default class Index extends Component {
             }
 
             .scroll-view {
-              position: fixed;
+              position: absolute;
               top: 0;
               width: 100%;
               height: 100vh;
               transition: opacity 500ms cubic-bezier(0.4, 0.0, 0.2, 1);
-              opacity: 0;
+              opacity: 1;
               z-index: -1;
+            }
+
+            .scroll-view.fix {
+              position: fixed;
+              top: 0;
+              opacity: 1;
+            }
+
+            .scroll-view.relase {
+              position: absolute;
+              opacity: 0.5;
             }
 
             .scroll-view .main-name {
@@ -294,16 +305,6 @@ export default class Index extends Component {
               letter-spacing: .6em;
             }
 
-            .scroll-view.fix {
-              position: fixed;
-              top: 0;
-              opacity: 1;
-            }
-
-            .scroll-view.relase {
-              position: fixed;
-              opacity: 0;
-            }
             .scroll-view.fix h1 {
               letter-spacing: .12em;
             }
@@ -376,10 +377,6 @@ export default class Index extends Component {
 
             .github {
               text-align: center;
-            }
-
-            .social-links {
-              text-transform: capitalize;
             }
 
             `}</style>

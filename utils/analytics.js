@@ -18,6 +18,17 @@ export const logEvent = (category = '', action = '') => {
   }
 }
 
+export const outboundEvent = (event) => {
+  if (event) {
+    const link = event.target.href;
+    ReactGA.outboundLink({
+      label: link
+    }, () => {
+      //console.log('event sent', event);
+    })
+  }
+}
+
 export const logException = (description = '', fatal = false) => {
   if (description) {
     ReactGA.exception({ description, fatal })

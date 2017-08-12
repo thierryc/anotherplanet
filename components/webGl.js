@@ -12,7 +12,7 @@ export default class WebGl extends Component {
   componentDidMount() {
     const container = ReactDOM.findDOMNode(this.refs.container)
     this.three = {}
-    this.threshold = 40;
+    this.threshold = 48;
     this.size = {
       innerWidth: window.innerWidth,
       innerHeight: window.innerHeight + this.threshold
