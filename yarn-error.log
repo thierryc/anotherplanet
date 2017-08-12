@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn version
+  /usr/local/bin/node /usr/local/bin/yarn upgrade @material
 
 PATH: 
   /Users/thierry/_tools/google-cloud-sdk/bin:/opt/local/bin:/opt/local/sbin:/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/Library/Frameworks/GDAL.framework/Programs:/usr/local/sbin:/usr/local/mysql/bin
@@ -16,16 +16,17 @@ Platform:
 npm manifest: 
   {
     "name": "anotherplanet",
-    "version": "1.0.1",
+    "version": "1.0.30",
     "description": "",
     "main": "index.js",
     "private": true,
     "scripts": {
       "test": "jest",
       "dev": "next",
-      "build": "next export -h && next build && next export",
+      "build": "next build && next export",
       "start": "next start",
-      "serve": "next build && next export && http-server out"
+      "serve": "next build && next export && http-server out",
+      "deploy": "fly deploy:production"
     },
     "repository": {
       "type": "git",
@@ -39,10 +40,11 @@ npm manifest:
     "homepage": "https://gitlab.com/anotherplanet/anotherplanet#README",
     "dependencies": {
       "classnames": "^2.2.5",
-      "next": "^3.0.0-beta16",
+      "next": "^3.0.3",
       "prop-types": "^15.5.10",
       "react": "^15.6.1",
       "react-dom": "^15.6.1",
+      "react-ga": "^2.2.0",
       "react-no-ssr": "^1.1.0",
       "three": "^0.86.0"
     },
@@ -1599,7 +1601,7 @@ Lockfile:
       safe-buffer "^5.0.1"
       sha.js "^2.4.8"
   
-  create-react-class@^15.6.0:
+  create-react-class@^15.5.2, create-react-class@^15.6.0:
     version "15.6.0"
     resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.0.tgz#ab448497c26566e1e29413e883207d57cfe7bed4"
     dependencies:
@@ -4076,7 +4078,7 @@ Lockfile:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/ncp/-/ncp-2.0.0.tgz#195a21d6c46e361d2fb1281ba38b91e9df7bdbb3"
   
-  next@^3.0.0-beta16:
+  next@^3.0.3:
     version "3.0.3"
     resolved "https://registry.yarnpkg.com/next/-/next-3.0.3.tgz#35128ba8359064ffe8d1d5e5543410319c6d66d3"
     dependencies:
@@ -5020,7 +5022,7 @@ Lockfile:
       has "^1.0.1"
       object.assign "^4.0.4"
   
-  prop-types@15.5.10, prop-types@^15.5.10, prop-types@^15.5.4:
+  prop-types@15.5.10, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6:
     version "15.5.10"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
     dependencies:
@@ -5049,11 +5051,11 @@ Lockfile:
       parse-asn1 "^5.0.0"
       randombytes "^2.0.1"
   
-  punycode@1.3.2, punycode@^1.2.4:
+  punycode@1.3.2:
     version "1.3.2"
     resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.3.2.tgz#9653a036fb7c1ee42342f2325cceefea3926c48d"
   
-  punycode@^1.4.1:
+  punycode@^1.2.4, punycode@^1.4.1:
     version "1.4.1"
     resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
   
@@ -5115,6 +5117,14 @@ Lockfile:
       loose-envify "^1.1.0"
       object-assign "^4.1.0"
       prop-types "^15.5.10"
+  
+  react-ga@^2.2.0:
+    version "2.2.0"
+    resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.2.0.tgz#45235de1356e4d988d9b82214d615a08489c9291"
+    dependencies:
+      create-react-class "^15.5.2"
+      object-assign "^4.0.1"
+      prop-types "^15.5.6"
   
   react-hot-loader@3.0.0-beta.7:
     version "3.0.0-beta.7"
@@ -6524,9 +6534,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/zwitch/-/zwitch-1.0.2.tgz#9b059541bfa844799fe2d903bde609de2503a041"
 
 Trace: 
-  Error: Can't answer a question unless a user TTY
-      at ConsoleReporter.question (/usr/local/lib/node_modules/yarn/lib/reporters/console/console-reporter.js:216:29)
-      at /usr/local/lib/node_modules/yarn/lib/cli/commands/version.js:60:35
-      at next (native)
-      at step (/usr/local/lib/node_modules/yarn/node_modules/babel-runtime/helpers/asyncToGenerator.js:17:30)
-      at /usr/local/lib/node_modules/yarn/node_modules/babel-runtime/helpers/asyncToGenerator.js:28:13
+  Error: https://registry.yarnpkg.com/@material: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/util/request-manager.js:326:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/node_modules/request/request.js:188:22)
+      at emitTwo (events.js:106:13)
+      at Request.emit (events.js:191:7)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/node_modules/request/request.js:1171:10)
+      at emitOne (events.js:96:13)
+      at Request.emit (events.js:188:7)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/node_modules/request/request.js:1091:12)
+      at IncomingMessage.g (events.js:292:16)
+      at emitNone (events.js:91:20)

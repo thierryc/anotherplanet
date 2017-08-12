@@ -24,7 +24,7 @@
   "homepage": "https://gitlab.com/anotherplanet/anotherplanet#README",
   "dependencies": {
     "classnames": "^2.2.5",
-    "next": "^3.0.0-beta16",
+    "next": "^3.0.3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
