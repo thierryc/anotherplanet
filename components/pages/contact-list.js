@@ -8,7 +8,7 @@ export default ({data}) => (
         if(index +1 < arr.length) end =', '
         else end = '.'
         return (
-          <span key={index} ><a href={ item.link } onClick={outboundEvent} target="_blank">{item.name}</a>{end}</span>
+          <span key={index} ><a href={ item.link } onClick={outboundEvent} target="_blank" rel="noopener">{item.name}</a>{end}</span>
         )
       })
     }

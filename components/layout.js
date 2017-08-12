@@ -25,6 +25,8 @@ export default class Layout extends Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
           <link rel="shortcut icon" type='image/x-icon' href="/static/favicon.ico"/>
           <link rel="stylesheet" type="text/css" href="/static/css/bundle.css"/>
+          {/* Chrome, Firefox OS and Opera */}
+          <meta name="theme-color" content="#282d47" />
         </Head>
         <header>
           { /*
