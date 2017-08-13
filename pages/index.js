@@ -29,7 +29,7 @@ const WebGlNoSSR = dynamic(
     loading: () => (
       <p><span>...</span>
         <style jsx>{`
-          
+
         `}</style>
       </p>
     )
@@ -175,7 +175,7 @@ export default class Index extends Component {
                 <Cell tablet={8} desktop={12}>
                   <Telescope />
                   <p>Beyond the scene</p>
-                  <p className="github"><a href={ config.publicRepository } target="_blank">Browse this React, Three.js and Next.js website code on Github</a></p>
+                  <p className="github"><a href={ config.publicRepository } target="_blank" rel="noopener">Browse this React, Three.js and Next.js website code on Github</a></p>
                 </Cell>
               </Row>
               <Row>
