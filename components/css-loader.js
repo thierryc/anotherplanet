@@ -22,9 +22,8 @@ export default class CssLoader extends Component {
     // deferred-styles
     const { href } = this.props
     return (
-      <noscript>
-        <link rel="stylesheet" type="text/css" href={ href }/>
-      </noscript>
+
+      
     );
   }
 }

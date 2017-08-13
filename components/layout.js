@@ -4,6 +4,7 @@ import Head from 'next/head'
 // import Header from '.header'
 // import Footer from '.footer'
 import { initGA, logPageView } from '../utils/analytics'
+import FollowMe from '~/components/pages/followme-twitter'
 // Styles
 import Scss from '../scss/main.scss'
 
@@ -44,6 +45,9 @@ export default class Layout extends Component {
 
         <footer>
           <p>© 1994 - 2017 Thierry Charbonnel - All Rights Reserved</p>
+          <p style={{ textAlign: 'center' }}>
+            <FollowMe userId="Autre_planete" />
+          </p>
         </footer>
 
         <style jsx>{`

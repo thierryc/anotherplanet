@@ -31,6 +31,18 @@ export default () => (
             <p>I work with a variety of technologies including JavaScript, WebGL, SVG, Node, Python.</p>
             <p>I also do graphic design and motion design, Video and Typography.</p>
             <p>I live in NYC with my wife and my kid.</p>
+
+            <li>Javascript </li>
+            <li>React </li>
+            <li>Gulp, Grunt, Taskr (fly)</li>
+            <li>Webpack </li>
+            <li>SASS</li>
+            <li>REST APIs</li>
+            <li>Node/express </li>
+            <li>Self-driven and can work without supervision </li>
+            <li>Rapid prototyping</li>
+
+
           </Cell>
         </Row>
       </Container>
@@ -53,6 +65,9 @@ export default () => (
                   })
                 }
               </p>
+
+
+
             </div>
           </Cell>
         </Row>

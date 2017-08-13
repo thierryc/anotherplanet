@@ -157,19 +157,6 @@ export default class Index extends Component {
               </Row>
             </Container>
 
-            <Container className="links">
-              <Row>
-                <Cell tablet={8} desktop={12} align={'middle'}>
-                  <div className="contact">
-                    <p className="icon-separator"><Satellite /></p>
-                    <p>I’m always happy <a href={ config.socialLinks.email.link }>to be involved</a> into interesting projects.</p>
-                    <p><b>Say hello:</b> <ContactList data={ config.socialLinks }/>
-                    </p>
-                  </div>
-                </Cell>
-              </Row>
-            </Container>
-
             <Container className="code">
               <Row>
                 <Cell tablet={8} desktop={12}>
@@ -178,7 +165,7 @@ export default class Index extends Component {
                   <p className="github"><a href={ config.publicRepository } target="_blank" rel="noopener">Browse this React, Three.js and Next.js website code on Github</a></p>
                 </Cell>
               </Row>
-              <Row>
+              <Row className="about-icons">
                 <Cell phone={2} tablet={2} desktop={3}>
                   <ReactLogo />
                 </Cell>
@@ -190,6 +177,19 @@ export default class Index extends Component {
                 </Cell>
                 <Cell phone={2} tablet={2} desktop={3}>
                   <ThreejsLogo />
+                </Cell>
+              </Row>
+            </Container>
+
+            <Container className="links">
+              <Row>
+                <Cell tablet={8} desktop={12} align={'middle'}>
+                  <div className="contact">
+                    <p className="icon-separator"><Satellite /></p>
+                    <p>I’m always happy <a href={ config.socialLinks.email.link }>to be involved</a> into interesting projects.</p>
+                    <p><b>Say hello:</b> <ContactList data={ config.socialLinks }/>
+                    </p>
+                  </div>
                 </Cell>
               </Row>
             </Container>
@@ -258,7 +258,13 @@ export default class Index extends Component {
 
             .homepage :global(.code) {
               text-align: center;
-              padding-top: 30vh;
+              padding-top: 20vh;
+              min-height: 50vh;
+            }
+
+            .homepage :global(.about-icons) {
+              max-width: 1280px;
+              margin: 0 auto;
             }
 
             .icon-separator {
