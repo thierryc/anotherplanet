@@ -148,7 +148,7 @@ export default class Index extends Component {
               <Row>
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="intro">
-                    <p>I am Thierry Charbonnel, a Designer based in NYC. Specializing in front-end web development, prototyping and UI design using, React, WebGL, JavaScript and Sketch app.</p>
+                    <p>I am Thierry Charbonnel, a Designer based in NYC. Specializing in front-end web development, prototyping and UX/UI design using, React, WebGL, JavaScript and Sketch app.</p>
                     <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design and Data Visualization.</p>
                     <p>I am thinking about the intersection of technology + design.</p>
                     <p>Previously at Autre Planète* Design Studio Paris (founder).</p>
