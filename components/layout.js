@@ -64,7 +64,6 @@ export default class Layout extends Component {
             text-align: center;
           }
 
-
         `}</style>
       </div>
     )
