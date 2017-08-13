@@ -266,7 +266,7 @@ export default class Index extends Component {
             }
 
             .scroll-view {
-              position: absolute;
+              position: fixed;
               top: 0;
               width: 100%;
               height: 100vh;
@@ -276,14 +276,13 @@ export default class Index extends Component {
             }
 
             .scroll-view.fix {
-              position: fixed;
               top: 0;
               opacity: 1;
             }
 
             .scroll-view.relase {
-              position: absolute;
-              opacity: 0.5;
+              opacity: 0;
+              top: 0;
             }
 
             .scroll-view .main-name {
@@ -301,12 +300,16 @@ export default class Index extends Component {
             .scroll-view h1 {
               margin-top: 50vh;
               padding-top: 16px;
-              transition: letter-spacing 3s ease 100ms;
+              transition: letter-spacing 3s 100ms  cubic-bezier(0.4, 0.0, 0.2, 1);
               letter-spacing: .6em;
             }
 
             .scroll-view.fix h1 {
               letter-spacing: .12em;
+            }
+
+            .scroll-view.relase h1 {
+              letter-spacing: .35em;;
             }
 
             .plugins-link {
