@@ -125,7 +125,8 @@ export default class Index extends Component {
                   <h1>Another Planet.io</h1>
                 </div>
                 <div className='baseline'>
-                  <p>Thierry Charbonnel <span className={ Scss.xsInlineNone }>–</span><span className={ Scss.xsInline }><br/></span> UX / UI and Code Designer</p>
+                  <p>Thierry Charbonnel <span className={ Scss.xsInlineNone }>–</span><span className={ Scss.xsInline }><br/></span> UX / UI and Code Designer<br/>
+                  <span style={{ opacity: 0.5, fontSize: '0.9em' }}>Brooklyn NY + Paris</span></p>
                 </div>
               </div>
               <div className={'scroll-icon ' + ((this.state.scrollY < this.state.viewport.h * 2) ? 'fix' : 'relase')}>
@@ -306,7 +307,7 @@ export default class Index extends Component {
             .scroll-view h1 {
               margin-top: 50vh;
               padding-top: 16px;
-              transition: letter-spacing 3s 100ms  cubic-bezier(0.4, 0.0, 0.2, 1);
+              transition: letter-spacing 2s 100ms cubic-bezier(0.4, 0.0, 0.2, 1);
               letter-spacing: .6em;
             }
 
@@ -315,7 +316,7 @@ export default class Index extends Component {
             }
 
             .scroll-view.relase h1 {
-              letter-spacing: .35em;;
+              letter-spacing: .4em;;
             }
 
             .plugins-link {

@@ -4,6 +4,7 @@ export default ({data}) => (
   <span>{
       Object.keys(data).map((key, index, arr) => {
         const item = data[key]
+        if (item.active === false) { return }
         let end
         if(index +1 < arr.length) end =', '
         else end = '.'
@@ -15,6 +16,9 @@ export default ({data}) => (
     <style jsx>{`
       a {
         text-transform: capitalize;
+        padding: 0 .2em;
+        border-radius: .1em;
+        background-color: rgba(0,0,0,0.2);
       }
     `}</style>
   </span>

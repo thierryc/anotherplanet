@@ -44,10 +44,10 @@ export default class Layout extends Component {
         { children }
 
         <footer>
-          <p>© 1994 - 2017 Thierry Charbonnel - All Rights Reserved</p>
           <p style={{ textAlign: 'center' }}>
             <FollowMe userId="Autre_planete" />
           </p>
+          <p>© 1994 - 2017 Thierry Charbonnel - All Rights Reserved</p>
         </footer>
 
         <style jsx>{`
