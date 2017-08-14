@@ -7,6 +7,8 @@ export default class WebGl extends Component {
   constructor(props) {
     super(props)
     this.resizeHandler = this.resizeHandler.bind(this)
+    this.easeIn = this.easeIn.bind(this)
+    this.easeOut = this.easeOut.bind(this)
   }
 
   componentDidMount() {
@@ -27,8 +29,8 @@ export default class WebGl extends Component {
     // add the container
     container.appendChild( this.three.renderer.domElement )
 
-    this.three.camera.position.z = 100;
-    this.three.scene.fog = new THREE.Fog( 0x282d47, 1000, 6000 );
+    this.three.camera.position.z = 6250
+    this.three.scene.fog = new THREE.Fog( 0x282d47, 1000, 6250 )
 
     /*
     * Star
@@ -64,9 +66,9 @@ export default class WebGl extends Component {
     	'static/textures/logo-another-planet-white.png', // 'static/textures/uv.jpg',
     	// Function when resource is loaded
     	(texture) => {
-        // console.log('isload');
     		this.apLogoCoposent.material.map = texture
         this.three.scene.add( this.aplogo )
+        this.three.renderer.render(this.three.scene, this.three.camera)
     	}
     )
     this.three.stars = []
@@ -85,7 +87,7 @@ export default class WebGl extends Component {
 			//finally push it to the stars array
 			this.three.stars.push(sphere);
 		}
-    this.three.camera.position.z = 6000
+    this.three.camera.position.z = 6250
     this.aplogo.position.y = 100
     this.aplogo.position.z = 4500
     this.aplogo.position.x = 0
@@ -95,43 +97,40 @@ export default class WebGl extends Component {
     * Resize listner
     **/
     window.addEventListener('resize', this.resizeHandler, false)
-    setTimeout(this.resizeHandler, 10)
+    this.resizeHandler()
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.resizeHandler, false)
   }
 
+  // TODO move in animation class
+  easeIn(t, d, pow) {
+    return Math.pow(Math.min(t, d) / d, pow);
+  }
+
+  // TODO move in animation class
+  easeOut(t, d, pow) {
+    return 1 - Math.pow(1 - (Math.min(t, d) / d), pow)
+  }
+
   componentDidUpdate(prevProps) {
-    //console.log(this.props.timeControl)
-    const pow = 3;
-
-    const easeIn = (t, d) => {
-      return Math.pow(Math.min(t, d) / d, pow);
-    }
-
-    const easeOut = (t, d) => {
-      return 1 - Math.pow(1 - (Math.min(t, d) / d), pow)
-    }
 		//this.three.camera.lookAt( this.three.scene.position );
-
     if (prevProps.timeControl !== this.props.timeControl) {
-      const zpos = easeOut(this.props.timeControl, 2000)
-      this.three.camera.position.z = zpos * -5000 + 6000
+      const zpos = this.easeOut(this.props.timeControl, 2000, 3)
+      this.three.camera.position.z = zpos * -5000 + 6250
       this.aplogo.position.y = zpos * -400 + 100
       this.aplogo.position.z = zpos * -4500 + 4500
       this.apLogoCoposent.material.opacity = 1 - zpos //or any other value you like
-
       //this.aplogo.rotation.y = (zpos * -0.5) + 0.5
       this.three.camera.position.y = this.props.timeControl * -0.5
-      this.three.renderer.render(this.three.scene, this.three.camera);
+      this.three.renderer.render(this.three.scene, this.three.camera)
     }
   }
 
   resizeHandler() {
     //var style = window.getComputedStyle(ReactDOM.findDOMNode(this.refs.container), null)
     //console.log(window.innerHeight, style.getPropertyValue("height"))
-
     if( Math.abs(this.size.innerWidth - window.innerWidth) > this.threshold || Math.abs(this.size.innerHeight - window.innerHeight) > this.threshold) {
       this.size = {
         innerWidth: window.innerWidth,
@@ -143,7 +142,7 @@ export default class WebGl extends Component {
     this.three.renderer.setSize( this.size.innerWidth, this.size.innerHeight );
     this.three.windowHalfX = this.size.innerWidth / 2;
     this.three.windowHalfY = this.size.innerHeight / 2;
-    setTimeout(() => { this.three.renderer.render( this.three.scene, this.three.camera) }, 0)
+    setTimeout(this.three.renderer.render( this.three.scene, this.three.camera),100)
   }
 
   render() {

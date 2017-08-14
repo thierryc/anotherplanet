@@ -20,7 +20,6 @@ import SketchLogo from '../svgs/sketch-logo.svg'
 import ThreejsLogo from '../svgs/threejs-logo.svg'
 
 import ContactList from '~/components/pages/contact-list'
-
 import { logEvent } from '../utils/analytics'
 
 const WebGlNoSSR = dynamic(
@@ -202,6 +201,7 @@ export default class Index extends Component {
 
             /* mobile first */
             .hero {
+              height: 360px;
               height: 360vh;
               max-width: 100%;
               overflow: hidden;
