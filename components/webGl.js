@@ -72,7 +72,7 @@ export default class WebGl extends Component {
     	}
     )
     this.three.stars = []
-    for (var z = -1200; z < 11000; z += 15 ) {
+    for (var z = -1200; z < 6000; z += 15 ) {
 			// Make a sphere (exactly the same as before).
 			const sphere = new THREE.Mesh(star.geometry, star.material)
 			// This time we give the sphere random x and y positions between -500 and 500
