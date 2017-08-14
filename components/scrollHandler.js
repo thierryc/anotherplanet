@@ -8,11 +8,15 @@ export default class ScrollHandler extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    if (typeof window !== 'undefined')  {
+      window.addEventListener('scroll', this.handleScroll);
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    if (typeof window !== 'undefined')  {
+      window.removeEventListener('scroll', this.handleScroll);
+    }
   }
 
   handleScroll(e) {

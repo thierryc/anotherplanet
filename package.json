@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "dev": "next",
-    "build": "next build && next export",
+    "build": "jest && next build && next export",
     "start": "next start",
     "serve": "next build && next export && http-server out",
     "deploy": "fly deploy:production"

@@ -10,7 +10,7 @@ import Scss from '../scss/main.scss'
 
 export default class Layout extends Component {
   componentDidMount () {
-    if (!window.GA_INITIALIZED) {
+    if (typeof window !== 'undefined' && !window.GA_INITIALIZED) {
       initGA()
       window.GA_INITIALIZED = true
     }
@@ -47,7 +47,7 @@ export default class Layout extends Component {
           <p style={{ textAlign: 'center' }}>
             <FollowMe userId="Autre_planete" />
           </p>
-          <p>© 1994 - 2017 Thierry Charbonnel - All Rights Reserved</p>
+          <p>© 1994 - {new Date().getFullYear()} Thierry Charbonnel - All Rights Reserved</p>
         </footer>
 
         <style jsx>{`

@@ -12,6 +12,9 @@ export default class WebGl extends Component {
   }
 
   componentDidMount() {
+    if (typeof window === 'undefined')  {
+      return
+    }
     const container = ReactDOM.findDOMNode(this.refs.container)
     this.three = {}
     this.threshold = 48;

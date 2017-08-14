@@ -72,12 +72,16 @@ export default class Index extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.getViewport, false )
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', this.getViewport, false )
+    }
     this.getViewport();
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.getViewport, false )
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', this.getViewport, false )
+    }
   }
 
   scrollHandler(e, last_known_scroll_position) {
@@ -99,14 +103,16 @@ export default class Index extends Component {
   }
 
   getViewport() {
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    if (typeof window !== 'undefined') {
+    const w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+    const h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
     this.setState({
       viewport: {
         w: w,
         h: h
       }
     });
+    }
   }
 
   render() {
