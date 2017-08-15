@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export default class ScrollHandler extends Component {
+export default class IsVisible extends Component {
   constructor(props) {
     super(props)
     this.handleScroll = this.handleScroll.bind(this);
@@ -27,7 +27,7 @@ export default class ScrollHandler extends Component {
         // doSomething(last_known_scroll_position);
         // console.log('scroll event')
         // console.log(e, last_known_scroll_position)
-        this.props.onScrollUpdate(e, last_known_scroll_position)
+        this.props.isVisible = true;
         ticking = false
       });
     }
@@ -44,7 +44,7 @@ export default class ScrollHandler extends Component {
   }
 }
 
-ScrollHandler.propTypes = {
-  children: PropTypes.element.isRequired,
-  onScrollUpdate: PropTypes.func.isRequired
+IsVisible.propTypes = {
+  children: PropTypes.element.isRequired
+  isVisible: PropTypes.bool.isRequired
 };

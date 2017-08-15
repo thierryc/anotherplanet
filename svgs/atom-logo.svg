@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" version="1.1" viewBox="0 0 128 128">
+  <g id="Page-1" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+    <g id="atom-logo">
+      <g>
+        <rect id="wiewport" width="128" height="128" x="0" y="0"/>
+        <circle id="Oval" cx="64" cy="64" r="4" fill="#FFFFFF"/>
+        <path id="Oval-2" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M90.5361735,71.3178437 C95.206294,69.1773781 98,66.4597815 98,63.5022934 C98,56.598734 82.7776815,51.0022934 64,51.0022934 C45.2223185,51.0022934 30,56.598734 30,63.5022934 C30,66.4826898 32.8371529,69.219464 37.5726861,71.3674789" transform="translate(64.000000, 61.184886) rotate(3.000000) translate(-64.000000, -61.184886)"/>
+        <path id="Oval-2" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M36.7805543,52.1186696 C31.3236143,54.3360795 28,57.2764894 28,60.5022934 C28,67.4058527 43.2223185,73.0022934 62,73.0022934 L62,73.0022934 C80.7776815,73.0022934 96,67.4058527 96,60.5022934 C96,57.2705557 92.6641472,54.3252629 87.1893106,52.1064405" transform="translate(62.000000, 62.554367) rotate(-237.000000) translate(-62.000000, -62.554367)"/>
+        <path id="Oval-2" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M89.6625307,71.7022997 C94.8557638,69.5073964 98,66.6398404 98,63.5022934 C98,56.598734 82.7776815,51.0022934 64,51.0022934 C45.2223185,51.0022934 30,56.598734 30,63.5022934 C30,70.1310099 44.034391,75.5546133 61.7749242,75.9759534" transform="translate(64.000000, 63.502293) rotate(-117.000000) translate(-64.000000, -63.502293)"/>
+        <circle id="Oval-3" cx="64" cy="64" r="54" stroke="#FFFFFF" stroke-width="5"/>
+      </g>
+    </g>
+  </g>
+</svg>

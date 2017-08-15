@@ -7,6 +7,7 @@ import { Container, Row, Cell } from '~/components/grid'
 import config from '../site-config'
 // ScrollHandler component
 import ScrollHandler from '~/components/scrollHandler'
+import Spinner from '~/components/spinner'
 // Styles
 import Scss from '../scss/main.scss'
 // SVG
@@ -25,13 +26,18 @@ import { logEvent } from '../utils/analytics'
 const WebGlNoSSR = dynamic(
   import('../components/webGl'),
   { ssr: false,
-    loading: () => (
-      <p><span>...</span>
-        <style jsx>{`
-
-        `}</style>
-      </p>
-    )
+    loading: () => {
+      return (
+        <div className="loading">
+          <Spinner backgroundColor="#282d47"/>
+          <style jsx>{`
+            .loading {
+              margin-top: 10vh;
+            }
+          `}</style>
+        </div>
+      )
+    }
   }
 )
 
