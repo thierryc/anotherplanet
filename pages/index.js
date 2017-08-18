@@ -32,7 +32,9 @@ const WebGlNoSSR = dynamic(
           <Spinner backgroundColor="#282d47"/>
           <style jsx>{`
             .loading {
-              margin-top: 10vh;
+              margin: 10vh auto 0;
+              width: 25px;
+              height: 25px;
             }
           `}</style>
         </div>
@@ -160,7 +162,7 @@ export default class Index extends Component {
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="intro">
                     <p>I am Thierry Charbonnel, a Designer based in NYC. Specializing in <b>front-end web development</b>, prototyping and <b>UX/UI design</b> using, React (+native), WebGL, JavaScript and Sketch app plugins.</p>
-                    <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design and Data Visualization.</p>
+                    <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and Data Visualization.</p>
                     <p>I am thinking about the intersection of technology + design.</p>
                     <p>Previously at Autre Planète* Design Studio Paris (founder).</p>
                     <p>My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.</p>

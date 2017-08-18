@@ -9,7 +9,10 @@ module.exports = {
     return {
       "/": { page: "/" },
       "/about": { page: "/about" },
-      "/p/hello-nextjs": { page: "/post", query: { title: "hello-nextjs" } }
+      "/p/hello-nextjs": { page: "/post", query: { title: "hello-nextjs" } },
+      "/resume": { page: "/resume" },
+      "/resume-eng/": { page: "/resume", query: { title: "eng" } },
+      "/resume-fre/": { page: "/resume", query: { title: "fre" } }
     }
   },
   /* webpack: (config, { dev }) => {

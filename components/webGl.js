@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import ReactDOM from 'react-dom'
 import * as THREE from 'three'
+
 //import WAGNER from '../bower_components/Wagner/Wagner'
 
 export default class WebGl extends Component {
@@ -15,6 +16,7 @@ export default class WebGl extends Component {
     if (typeof window === 'undefined')  {
       return
     }
+    
     const container = ReactDOM.findDOMNode(this.refs.container)
     this.three = {}
     this.threshold = 48;
@@ -104,6 +106,9 @@ export default class WebGl extends Component {
   }
 
   componentWillUnmount() {
+    if (typeof window === 'undefined')  {
+      return
+    }
     window.removeEventListener('resize', this.resizeHandler, false)
   }
 
@@ -118,6 +123,9 @@ export default class WebGl extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    if (typeof window === 'undefined')  {
+      return
+    }
 		//this.three.camera.lookAt( this.three.scene.position );
     if (prevProps.timeControl !== this.props.timeControl) {
       const zpos = this.easeOut(this.props.timeControl, 2000, 3)
