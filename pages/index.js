@@ -25,7 +25,8 @@ import { logEvent } from '../utils/analytics'
 
 const WebGlNoSSR = dynamic(
   import('../components/webGl'),
-  { ssr: false,
+  {
+    ssr: false,
     loading: () => {
       return (
         <div className="loading">
@@ -42,6 +43,14 @@ const WebGlNoSSR = dynamic(
     }
   }
 )
+
+const DetectBrowser = dynamic(
+  import('../components/detect-browser'),
+  {
+    ssr: false
+  }
+)
+
 
 export default class Index extends Component {
   static getInitialProps ({ req }) {
@@ -131,6 +140,7 @@ export default class Index extends Component {
 
             <section className='hero'>
               <WebGlNoSSR timeControl={this.state.scrollY} />
+              <DetectBrowser />
               <div
                 className={'scroll-view ' + ((this.state.scrollY > this.state.viewport.h) ? 'relase' : (this.state.scrollY < this.state.viewport.h) ? 'fix' : '')}
                 >
