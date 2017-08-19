@@ -37,7 +37,7 @@ plan.local('deploy', function(local) {
   local.exec('cp google.html out/' + config.production.googleVerificationFile + '.html')
   local.exec('cp manifest.json out/')
   local.exec('cp robots.txt out/')
-  local.exec('cp .well-known out/')
+  local.exec('cp -R .well-known out/')
   local.exec('cp .htaccess out/')
 
   local.log('Copy files to remote hosts');
