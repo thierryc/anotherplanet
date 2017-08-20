@@ -1,5 +1,5 @@
 {
-  "short_name": "AP - UX/UI",
+  "short_name": "AP UX/UI",
   "name": "Another Planet - UX / UI and Code",
   "icons": [
     {
@@ -18,5 +18,8 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "index.html?launcher=true"
+  "start_url": "./index.html?launcher=true",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#282d47"
 }
