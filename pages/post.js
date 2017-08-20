@@ -10,7 +10,7 @@ export default class extends Component {
     const post = await response.json()
     return { ...post }
   }
-
+  
   render () {
     return (
       <main>
