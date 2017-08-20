@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import ReactDOM from 'react-dom'
+import Head from 'next/head'
 import dynamic from 'next/dynamic'
 // components
 import Layout from '~/components/layout'
@@ -134,7 +135,7 @@ export default class Index extends Component {
 
   render() {
     return (
-      <Layout title='Another Planet - UX / UI and Code'>
+      <Layout title='Another Planet - UX / UI and Code' description='Thierry Charbonnel, UX/UI Designer based in NYC.'>
         <ScrollHandler onScrollUpdate={this.scrollHandler}>
           <main className="homepage">
 

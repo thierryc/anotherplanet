@@ -17,7 +17,7 @@ export default class Layout extends Component {
     logPageView()
   }
   render () {
-    const { children, title } = this.props
+    const { children, title, description } = this.props
     return (
       <div>
         <Head>
@@ -28,6 +28,7 @@ export default class Layout extends Component {
           <link rel="stylesheet" type="text/css" href="/static/css/bundle.css"/>
           {/* Chrome, Firefox OS and Opera */}
           <meta name="theme-color" content="#282d47" />
+          <meta name="description" content={ description }/>
         </Head>
         <header>
           { /*
