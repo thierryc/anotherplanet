@@ -172,11 +172,11 @@ export default class Index extends Component {
               <Row>
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="intro">
-                    <p>I am Thierry Charbonnel, a Designer based in NYC. Specializing in <b>front-end web development</b>, prototyping and <b>UX/UI design</b> using, React (+native), WebGL, JavaScript and Sketch app plugins.</p>
-                    <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and Data Visualization.</p>
-                    <p>I am thinking about the intersection of technology + design.</p>
-                    <p>Previously at Autre Planète* Design Studio Paris (founder).</p>
-                    <p>My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.</p>
+                    <p><span className="inlineBg">I am Thierry Charbonnel, a Designer based in NYC. Specializing in <b>front-end web development</b>, prototyping and <b>UX/UI design</b> using, React (+native), WebGL, JavaScript and Sketch app plugins.</span></p>
+                    <p><span className="inlineBg">My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and Data Visualization.</span></p>
+                    <p><span className="inlineBg">I am thinking about the intersection of technology + design.</span></p>
+                    <p><span className="inlineBg">Previously at Autre Planète* Design Studio Paris (founder).</span></p>
+                    <p><span className="inlineBg">My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.</span></p>
                   </div>
                 </Cell>
               </Row>
@@ -399,11 +399,19 @@ export default class Index extends Component {
               line-height: 32px;
             }
 
+            .inlineBg {
+                /* background-color: rgba(0,0,0,0.0); */
+            }
+
             @media (min-width: 576px) {
               .intro p, .contact p {
                 font-size: 32px;
                 line-height: 48px;
               }
+            }
+
+            :global(a) {
+              border-bottom: 1px solid rgba(255,255,255,0.3)
             }
 
             :global(a:hover), :global(a:active), :global(a:focus) {

@@ -18,7 +18,7 @@ export default ({data}) => (
         text-transform: capitalize;
         padding: 0 .2em;
         border-radius: .1em;
-        background-color: rgba(0,0,0,0.2);
+        background-color: rgba(0,0,0,0.1);
       }
     `}</style>
   </span>
