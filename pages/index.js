@@ -150,7 +150,7 @@ export default class Index extends Component {
                 </div>
                 <div className='baseline'>
                   <p>Thierry Charbonnel <span className={ Scss.xsInlineNone }>–</span><span className={ Scss.xsInline }><br/></span> UX / UI and Code Designer<br/>
-                  <span style={{ opacity: 0.5, fontSize: '0.9em' }}>Brooklyn NY + Paris</span></p>
+                  <span style={{ opacity: 0.5, fontSize: '0.9em' }}>NYC & Paris</span></p>
                 </div>
               </div>
               <div className={'scroll-icon ' + ((this.state.scrollY < this.state.viewport.h * 2) ? 'fix' : 'relase')}>
@@ -172,11 +172,10 @@ export default class Index extends Component {
               <Row>
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="intro">
-                    <p><span className="inlineBg">I am Thierry Charbonnel, a Designer based in NYC. Specializing in <b>front-end web development</b>, prototyping and <b>UX/UI design</b> using, React (+native), WebGL, JavaScript and Sketch app plugins.</span></p>
-                    <p><span className="inlineBg">My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and Data Visualization.</span></p>
-                    <p><span className="inlineBg">I am thinking about the intersection of technology + design.</span></p>
-                    <p><span className="inlineBg">Previously at Autre Planète* Design Studio Paris (founder).</span></p>
-                    <p><span className="inlineBg">My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.</span></p>
+                    <p>I am Thierry Charbonnel, a Designer based in NYC. Specializing in <b>front-end web development</b>, prototyping and <b>UX/UI design</b>.</p>
+                    <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and Data Visualization.</p>
+                    <p>I am thinking about the intersection of technology + design.</p>
+                    <p>My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.</p>
                   </div>
                 </Cell>
               </Row>
@@ -397,10 +396,6 @@ export default class Index extends Component {
             .intro p, .contact p {
               font-size: 20px;
               line-height: 32px;
-            }
-
-            .inlineBg {
-                /* background-color: rgba(0,0,0,0.0); */
             }
 
             @media (min-width: 576px) {
