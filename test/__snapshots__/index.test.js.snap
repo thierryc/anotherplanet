@@ -10,11 +10,11 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
   <div>
     <main
       className="homepage"
-      data-jsx={3071915547}
+      data-jsx={3457201880}
     >
       <section
         className="hero"
-        data-jsx={3071915547}
+        data-jsx={3457201880}
       >
         <div
           className="heroCanvasContainer"
@@ -22,46 +22,46 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
         />
         <div
           className="scroll-view "
-          data-jsx={3071915547}
+          data-jsx={3457201880}
         >
           <div
             className="main-name"
-            data-jsx={3071915547}
+            data-jsx={3457201880}
           >
             <h1
-              data-jsx={3071915547}
+              data-jsx={3457201880}
             >
               Another Planet.io
             </h1>
           </div>
           <div
             className="baseline"
-            data-jsx={3071915547}
+            data-jsx={3457201880}
           >
             <p
-              data-jsx={3071915547}
+              data-jsx={3457201880}
             >
               Thierry Charbonnel 
               <span
                 className="main__xs-inline-none___1qzZQ"
-                data-jsx={3071915547}
+                data-jsx={3457201880}
               >
                 –
               </span>
               <span
                 className="main__xs-inline___2TdTk"
-                data-jsx={3071915547}
+                data-jsx={3457201880}
               >
                 <br
-                  data-jsx={3071915547}
+                  data-jsx={3457201880}
                 />
               </span>
                UX / UI and Code Designer
               <br
-                data-jsx={3071915547}
+                data-jsx={3457201880}
               />
               <span
-                data-jsx={3071915547}
+                data-jsx={3457201880}
                 style={
                   Object {
                     "fontSize": "0.9em",
@@ -69,17 +69,17 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
                   }
                 }
               >
-                Brooklyn NY + Paris
+                NYC & Paris
               </span>
             </p>
           </div>
         </div>
         <div
           className="scroll-icon relase"
-          data-jsx={3071915547}
+          data-jsx={3457201880}
         >
           <svg
-            data-jsx={3071915547}
+            data-jsx={3457201880}
             height="48px"
             version="1.1"
             viewBox="0 0 48 48"
@@ -87,19 +87,19 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              data-jsx={3071915547}
+              data-jsx={3457201880}
               fill="none"
               fillRule="evenodd"
               id="Page-1"
               stroke="none"
             >
               <g
-                data-jsx={3071915547}
+                data-jsx={3457201880}
                 id="scroll-icon"
               >
                 <polyline
                   className="arrowBottom"
-                  data-jsx={3071915547}
+                  data-jsx={3457201880}
                   points="38.5566864 25.8789063 24.4145508 40.0210419 10.2724152 25.8789062"
                   stroke="#FFFFFF"
                   strokeLinecap="round"
@@ -108,7 +108,7 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
                 />
                 <polyline
                   className="arrowMiddle"
-                  data-jsx={3071915547}
+                  data-jsx={3457201880}
                   points="38.5566864 17.8789063 24.4145508 32.0210419 10.2724152 17.8789062"
                   stroke="#FFFFFF"
                   strokeLinecap="round"
@@ -117,7 +117,7 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
                 />
                 <polyline
                   className="arrowUp"
-                  data-jsx={3071915547}
+                  data-jsx={3457201880}
                   points="38.5566864 9.87890625 24.4145508 24.0210419 10.2724152 9.87890625"
                   stroke="#FFFFFF"
                   strokeLinecap="round"
@@ -140,42 +140,37 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
           >
             <div
               className="intro"
-              data-jsx={3071915547}
+              data-jsx={3457201880}
             >
               <p
-                data-jsx={3071915547}
+                data-jsx={3457201880}
               >
                 I am Thierry Charbonnel, a Designer based in NYC. Specializing in 
                 <b
-                  data-jsx={3071915547}
+                  data-jsx={3457201880}
                 >
                   front-end web development
                 </b>
                 , prototyping and 
                 <b
-                  data-jsx={3071915547}
+                  data-jsx={3457201880}
                 >
                   UX/UI design
                 </b>
-                 using, React (+native), WebGL, JavaScript and Sketch app plugins.
+                .
               </p>
               <p
-                data-jsx={3071915547}
+                data-jsx={3457201880}
               >
                 My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and Data Visualization.
               </p>
               <p
-                data-jsx={3071915547}
+                data-jsx={3457201880}
               >
                 I am thinking about the intersection of technology + design.
               </p>
               <p
-                data-jsx={3071915547}
-              >
-                Previously at Autre Planète* Design Studio Paris (founder).
-              </p>
-              <p
-                data-jsx={3071915547}
+                data-jsx={3457201880}
               >
                 My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.
               </p>
@@ -212,16 +207,16 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
               </g>
             </svg>
             <p
-              data-jsx={3071915547}
+              data-jsx={3457201880}
             >
               Beyond the scene
             </p>
             <p
               className="github"
-              data-jsx={3071915547}
+              data-jsx={3457201880}
             >
               <a
-                data-jsx={3071915547}
+                data-jsx={3457201880}
                 href="https://github.com/thierryc/anotherplanet?ref=anotherplanet"
                 rel="noopener"
                 target="_blank"
@@ -337,11 +332,11 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
           >
             <div
               className="contact"
-              data-jsx={3071915547}
+              data-jsx={3457201880}
             >
               <p
                 className="icon-separator"
-                data-jsx={3071915547}
+                data-jsx={3457201880}
               >
                 <svg
                   height="80"
@@ -371,11 +366,11 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
                 </svg>
               </p>
               <p
-                data-jsx={3071915547}
+                data-jsx={3457201880}
               >
                 I’m always happy 
                 <a
-                  data-jsx={3071915547}
+                  data-jsx={3457201880}
                   href="mailto:hello@anotherplanet.io"
                 >
                   to be involved
@@ -383,22 +378,22 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
                  into interesting projects.
               </p>
               <p
-                data-jsx={3071915547}
+                data-jsx={3457201880}
               >
                 <b
-                  data-jsx={3071915547}
+                  data-jsx={3457201880}
                 >
                   Say hello:
                 </b>
                  
                 <span
-                  data-jsx={2965977666}
+                  data-jsx={3757623553}
                 >
                   <span
-                    data-jsx={2965977666}
+                    data-jsx={3757623553}
                   >
                     <a
-                      data-jsx={2965977666}
+                      data-jsx={3757623553}
                       href="https://twitter.com/Autre_planete?ref=anotherplanet"
                       onClick={[Function]}
                       rel="noopener"
@@ -409,10 +404,10 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
                     , 
                   </span>
                   <span
-                    data-jsx={2965977666}
+                    data-jsx={3757623553}
                   >
                     <a
-                      data-jsx={2965977666}
+                      data-jsx={3757623553}
                       href="https://medium.com/@anotherplanet?ref=anotherplanet"
                       onClick={[Function]}
                       rel="noopener"
@@ -423,10 +418,10 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
                     , 
                   </span>
                   <span
-                    data-jsx={2965977666}
+                    data-jsx={3757623553}
                   >
                     <a
-                      data-jsx={2965977666}
+                      data-jsx={3757623553}
                       href="https://github.com/thierryc?ref=anotherplanet"
                       onClick={[Function]}
                       rel="noopener"
@@ -437,10 +432,10 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
                     , 
                   </span>
                   <span
-                    data-jsx={2965977666}
+                    data-jsx={3757623553}
                   >
                     <a
-                      data-jsx={2965977666}
+                      data-jsx={3757623553}
                       href="https://fr.pinterest.com/apcx/?ref=anotherplanet"
                       onClick={[Function]}
                       rel="noopener"
@@ -451,10 +446,10 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
                     , 
                   </span>
                   <span
-                    data-jsx={2965977666}
+                    data-jsx={3757623553}
                   >
                     <a
-                      data-jsx={2965977666}
+                      data-jsx={3757623553}
                       href="mailto:hello@anotherplanet.io"
                       onClick={[Function]}
                       rel="noopener"

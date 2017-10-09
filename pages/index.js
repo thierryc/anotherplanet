@@ -150,7 +150,7 @@ export default class Index extends Component {
                 </div>
                 <div className='baseline'>
                   <p>Thierry Charbonnel <span className={ Scss.xsInlineNone }>–</span><span className={ Scss.xsInline }><br/></span> UX / UI and Code Designer<br/>
-                  <span style={{ opacity: 0.5, fontSize: '0.9em' }}>NYC & Paris</span></p>
+                  <span style={{ opacity: 0.5, fontSize: '0.9em' }}>NYC + Paris</span></p>
                 </div>
               </div>
               <div className={'scroll-icon ' + ((this.state.scrollY < this.state.viewport.h * 2) ? 'fix' : 'relase')}>
