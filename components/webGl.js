@@ -1,10 +1,10 @@
-import { Component } from 'react'
+import { PureComponent } from 'react'
 import ReactDOM from 'react-dom'
 import * as THREE from 'three'
 
 //import WAGNER from '../bower_components/Wagner/Wagner'
 
-export default class WebGl extends Component {
+export default class WebGl extends PureComponent {
   constructor(props) {
     super(props)
     this.resizeHandler = this.resizeHandler.bind(this)
@@ -16,7 +16,7 @@ export default class WebGl extends Component {
     if (typeof window === 'undefined')  {
       return
     }
-    
+
     const container = ReactDOM.findDOMNode(this.refs.container)
     this.three = {}
     this.threshold = 48;

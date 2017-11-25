@@ -1,4 +1,4 @@
-import { outboundEvent } from '~/utils/analytics'
+import { outboundEvent } from '../../utils/analytics'
 
 export default ({data}) => (
   <span>{
@@ -17,7 +17,6 @@ export default ({data}) => (
       a {
         text-transform: capitalize;
         padding: 0 .2em;
-        border-radius: .1em;
         background-color: rgba(0,0,0,0.1);
       }
     `}</style>

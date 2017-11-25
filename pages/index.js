@@ -1,16 +1,15 @@
-import {Component} from 'react'
-import ReactDOM from 'react-dom'
-import Head from 'next/head'
+import { Component } from 'react'
 import dynamic from 'next/dynamic'
-// components
-import Layout from '~/components/layout'
-import { Container, Row, Cell } from '~/components/grid'
+import Head from 'next/head'
+// utils
+import { logEvent } from '../utils/analytics'
+// Config
 import config from '../site-config'
-// ScrollHandler component
-import ScrollHandler from '~/components/scrollHandler'
-import Spinner from '~/components/spinner'
-// Styles
-import Scss from '../scss/main.scss'
+// Components
+import Layout from '../components/layout'
+import ScrollHandler from '../components/scrollHandler'
+import { Container, Row, Cell } from '../components/Next-React-Components/ap-layout-grid'
+import ContactList from '../components/pages/contact-list'
 // SVG
 import Satellite from '../svgs/satellite.svg'
 import Telescope from '../svgs/telescope.svg'
@@ -21,8 +20,18 @@ import JsLogo from '../svgs/js-logo.svg'
 import SketchLogo from '../svgs/sketch-logo.svg'
 import ThreejsLogo from '../svgs/threejs-logo.svg'
 
-import ContactList from '~/components/pages/contact-list'
-import { logEvent } from '../utils/analytics'
+const DetectBrowser = dynamic(
+  import('../components/detect-browser'),
+  {
+    ssr: false,
+    loading: () => {
+      return (
+        <div className="loading">
+        </div>
+      )
+    }
+  }
+)
 
 const WebGlNoSSR = dynamic(
   import('../components/webGl'),
@@ -31,37 +40,16 @@ const WebGlNoSSR = dynamic(
     loading: () => {
       return (
         <div className="loading">
-          <Spinner backgroundColor="#282d47"/>
-          <style jsx>{`
-            .loading {
-              margin: 10vh auto 0;
-              width: 25px;
-              height: 25px;
-            }
-          `}</style>
         </div>
       )
     }
   }
 )
 
-const DetectBrowser = dynamic(
-  import('../components/detect-browser'),
-  {
-    ssr: false
-  }
-)
-
-
 export default class Index extends Component {
-  static getInitialProps ({ req }) {
-    let userAgent
-    if (process.browser) {
-      // userAgent = navigator.userAgent
-    } else {
-      // userAgent = req.headers['user-agent']
-    }
-    return { userAgent }
+  static async getInitialProps ({ query }) {
+    const pathname = query.slug || '/'
+    return { pathname }
   }
 
   constructor(props) {
@@ -80,13 +68,7 @@ export default class Index extends Component {
     }
     this.scrollHandler = this.scrollHandler.bind(this)
     this.getViewport = this.getViewport.bind(this)
-
-  }
-
-  getInitialProps ({ req }) {
-    return req
-      ? { userAgent: req.headers['user-agent'] }
-      : { userAgent: navigator.userAgent }
+    console.log({...props});
   }
 
   componentDidMount() {
@@ -133,9 +115,13 @@ export default class Index extends Component {
     }
   }
 
-  render() {
+  render () {
     return (
-      <Layout title='Another Planet - UX / UI and Code' description='Thierry Charbonnel, UX/UI Designer based in NYC.'>
+      <Layout>
+        <Head>
+          <title>Another Planet - UX / UI and Code Designer</title>
+          <meta name="description" content='Thierry Charbonnel, UX/UI Designer based in NYC. Specializing in front-end web development, prototyping and UX/UI design.'/>
+        </Head>
         <ScrollHandler onScrollUpdate={this.scrollHandler}>
           <main className="homepage">
 
@@ -149,22 +135,9 @@ export default class Index extends Component {
                   <h1>Another Planet.io</h1>
                 </div>
                 <div className='baseline'>
-                  <p>Thierry Charbonnel <span className={ Scss.xsInlineNone }>–</span><span className={ Scss.xsInline }><br/></span> UX / UI and Code Designer<br/>
+                  <p>Thierry Charbonnel <span className={ 'xs-inline-none' }>– </span><span className={ 'xs-inline' }><br/></span>UX / UI and Code Designer<br/>
                   <span style={{ opacity: 0.5, fontSize: '0.9em' }}>NYC + Paris</span></p>
                 </div>
-              </div>
-              <div className={'scroll-icon ' + ((this.state.scrollY < this.state.viewport.h * 2) ? 'fix' : 'relase')}>
-
-                <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                  <g id="Page-1" stroke="none" fill="none" fillRule="evenodd">
-                    <g id="scroll-icon">
-                      <polyline className="arrowBottom" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" points="38.5566864 25.8789063 24.4145508 40.0210419 10.2724152 25.8789062"></polyline>
-                      <polyline className="arrowMiddle" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" points="38.5566864 17.8789063 24.4145508 32.0210419 10.2724152 17.8789062"></polyline>
-                      <polyline className="arrowUp" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" points="38.5566864 9.87890625 24.4145508 24.0210419 10.2724152 9.87890625"></polyline>
-                    </g>
-                  </g>
-                </svg>
-
               </div>
             </section>
 
@@ -190,17 +163,17 @@ export default class Index extends Component {
                 </Cell>
               </Row>
               <Row className="about-icons">
-                <Cell phone={2} tablet={2} desktop={3}>
-                  <ReactLogo />
+                <Cell phone={2} tablet={4} desktop={3}>
+                  <a href="https://reactjs.org/"><ReactLogo /></a>
                 </Cell>
-                <Cell phone={2} tablet={2} desktop={3}>
-                  <NextLogo />
+                <Cell phone={2} tablet={4} desktop={3}>
+                  <a href="https://github.com/zeit/next.js/"><NextLogo /></a>
                 </Cell>
-                <Cell phone={2} tablet={2} desktop={3}>
-                  <JsLogo />
+                <Cell phone={2} tablet={4} desktop={3}>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><JsLogo /></a>
                 </Cell>
-                <Cell phone={2} tablet={2} desktop={3}>
-                  <ThreejsLogo />
+                <Cell phone={2} tablet={4} desktop={3}>
+                  <a href="https://threejs.org"><ThreejsLogo /></a>
                 </Cell>
               </Row>
             </Container>
@@ -208,8 +181,8 @@ export default class Index extends Component {
             <Container className="links">
               <Row>
                 <Cell tablet={8} desktop={12} align={'middle'}>
+                  <p className="icon-separator"><Satellite /></p>
                   <div className="contact">
-                    <p className="icon-separator"><Satellite /></p>
                     <p>I’m always happy <a href={ config.socialLinks.email.link }>to be involved</a> into interesting projects.</p>
                     <p><b>Say hello:</b> <ContactList data={ config.socialLinks }/>
                     </p>
@@ -217,7 +190,6 @@ export default class Index extends Component {
                 </Cell>
               </Row>
             </Container>
-
           </main>
         </ScrollHandler>
 
@@ -396,21 +368,15 @@ export default class Index extends Component {
             .intro p, .contact p {
               font-size: 20px;
               line-height: 32px;
+              text-align: left;
             }
 
             @media (min-width: 576px) {
               .intro p, .contact p {
                 font-size: 32px;
                 line-height: 48px;
+                text-align: center;
               }
-            }
-
-            :global(a) {
-              border-bottom: 1px solid rgba(255,255,255,0.3)
-            }
-
-            :global(a:hover), :global(a:active), :global(a:focus) {
-              text-shadow: #ffffff 0 0 10px;
             }
 
             .github {
@@ -418,8 +384,7 @@ export default class Index extends Component {
             }
 
             `}</style>
-
       </Layout>
-    );
+    )
   }
 }

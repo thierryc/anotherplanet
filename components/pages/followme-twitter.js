@@ -1,4 +1,4 @@
-import { outboundEvent } from '~/utils/analytics'
+import { outboundEvent } from '../../utils/analytics'
 
 export default ({userId, showCount = false, dataSize = 'large'}) => (
   <span><a

@@ -4,9 +4,7 @@ import Head from 'next/head'
 // import Header from '.header'
 // import Footer from '.footer'
 import { initGA, logPageView } from '../utils/analytics'
-import FollowMe from '~/components/pages/followme-twitter'
-// Styles
-import Scss from '../scss/main.scss'
+import FollowMe from './pages/followme-twitter'
 
 export default class Layout extends Component {
   componentDidMount () {
@@ -17,18 +15,14 @@ export default class Layout extends Component {
     logPageView()
   }
   render () {
-    const { children, title, description } = this.props
+    const { children, ...props} = this.props
     return (
       <div>
         <Head>
-          <title>{ title }</title>
           <meta charSet='utf-8' />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
           <link rel="shortcut icon" type='image/x-icon' href="/static/favicon.ico"/>
-          <link rel="stylesheet" type="text/css" href="/static/css/bundle.css"/>
           {/* Chrome, Firefox OS and Opera */}
           <meta name="theme-color" content="#282d47" />
-          <meta name="description" content={ description }/>
         </Head>
         <header>
           { /*

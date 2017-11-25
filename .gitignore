@@ -15,3 +15,5 @@ site-config.js
 pages/resume.js
 .well-known
 BingSiteAuth.xml
+.babelrc-back
+pages.back

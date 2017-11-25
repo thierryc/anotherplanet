@@ -1,9 +1,9 @@
-import { Component } from 'react'
+import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import browser from 'detect-browser'
 import semver from 'semver'
 
-export default class DetectBrowser extends Component {
+export default class DetectBrowser extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {browser: {}};

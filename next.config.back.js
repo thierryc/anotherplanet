@@ -7,7 +7,12 @@ const debug = process.env.NODE_ENV !== "production";
 module.exports = {
   exportPathMap: function () {
     return {
-      "/": { page: "/" }
+      "/": { page: "/" },
+      "/about": { page: "/about" },
+      "/p/hello-nextjs": { page: "/post", query: { title: "hello-nextjs" } },
+      "/resume": { page: "/resume" },
+      "/resume-eng/": { page: "/resume", query: { title: "eng" } },
+      "/resume-fre/": { page: "/resume", query: { title: "fre" } }
     }
   },
   /* webpack: (config, { dev }) => {
