@@ -16,6 +16,8 @@ export default ({data}) => (
     <style jsx>{`
       a {
         text-transform: capitalize;
+        color: #FFFFFF;
+        text-decoration: none;
         padding: 0 .2em;
         background-color: rgba(0,0,0,0.1);
       }

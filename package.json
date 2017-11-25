@@ -37,6 +37,7 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "semver": "^5.4.1",
+    "styled-jsx": "^2.2.0",
     "styled-jsx-plugin-postcss": "^0.1.1",
     "three": "^0.86.0"
   },

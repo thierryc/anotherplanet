@@ -10,6 +10,7 @@ import Layout from '../components/layout'
 import ScrollHandler from '../components/scrollHandler'
 import { Container, Row, Cell } from '../components/Next-React-Components/ap-layout-grid'
 import ContactList from '../components/pages/contact-list'
+import GlobalStyles from '../components/styles'
 // SVG
 import Satellite from '../svgs/satellite.svg'
 import Telescope from '../svgs/telescope.svg'
@@ -192,8 +193,18 @@ export default class Index extends Component {
             </Container>
           </main>
         </ScrollHandler>
-
+        <GlobalStyles />
         <style jsx>{`
+
+            :global(body){
+              background-color: #282d47;
+              color: #cdd3db;
+            }
+
+            a {
+              color: #FFFFFF;
+              text-decoration: none;
+            }
 
             /* mobile first */
             .hero {
