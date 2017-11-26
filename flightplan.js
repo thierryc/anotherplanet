@@ -33,7 +33,7 @@ plan.local('deploy', function(local) {
   tmpdir = tag;
 
   local.log('Run clean and build');
-  local.exec('yarn build');
+  local.exec('npm run build');
   local.exec('cp google.html out/' + config.production.googleVerificationFile + '.html')
   local.exec('cp manifest.json out/')
   local.exec('cp robots.txt out/')
