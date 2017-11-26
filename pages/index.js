@@ -189,7 +189,8 @@ export default class Index extends Component {
                   <p className="icon-separator"><Satellite /></p>
                   <div className="contact">
                     <p>I’m always happy <a onClick={outboundEvent} href={ config.socialLinks.email.link }>to be involved</a> into interesting projects.</p>
-                    <p><b>Say hello:</b> <ContactList data={ config.socialLinks }/>
+                    <p>
+                      <b>Say hello:</b> <ContactList data={ config.socialLinks }/>
                     </p>
                   </div>
                 </Cell>

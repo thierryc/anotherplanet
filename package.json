@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "test": "jest",
+    "updateSnapshot": "jest --updateSnapshot",
     "dev": "next",
     "build": "jest && next build && next export",
     "start": "next start",

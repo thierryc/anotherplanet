@@ -4,7 +4,6 @@ import Head from 'next/head'
 // import Header from '.header'
 // import Footer from '.footer'
 import { initGA, logPageView } from '../utils/analytics'
-import FollowMe from './pages/followme-twitter'
 
 export default class Layout extends Component {
   componentDidMount () {
@@ -39,9 +38,6 @@ export default class Layout extends Component {
         { children }
 
         <footer>
-          <p style={{ textAlign: 'center' }}>
-            <FollowMe userId="Autre_planete" />
-          </p>
           <p>© 1994 - {new Date().getFullYear()} Thierry Charbonnel - All Rights Reserved</p>
         </footer>
 

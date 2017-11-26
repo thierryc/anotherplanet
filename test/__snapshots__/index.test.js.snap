@@ -467,32 +467,6 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
   >
     <p
       className="jsx-881161150"
-      style={
-        Object {
-          "textAlign": "center",
-        }
-      }
-    >
-      <span>
-        <a
-          className="twitter-follow-button"
-          data-show-count="false"
-          data-size="large"
-          href="https://twitter.com/Autre_planete"
-          onClick={[Function]}
-        >
-          Follow @
-          Autre_planete
-        </a>
-        <script
-          async={true}
-          charSet="utf-8"
-          src="//platform.twitter.com/widgets.js"
-        />
-      </span>
-    </p>
-    <p
-      className="jsx-881161150"
     >
       © 1994 - 
       2017
