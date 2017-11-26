@@ -14,7 +14,6 @@ export default class DetectBrowser extends PureComponent {
       const browser = detect();
       if (browser) {
         this.setState({ browser: browser })
-        console.log(browser);
       }
     }
   }

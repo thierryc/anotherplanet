@@ -81,21 +81,21 @@ export default () => (
       }
 
       /* utils */
-
       span.xs-inline {
-        display: none;
-      }
-
-      span.xs-inline-none {
         display: inline;
       }
-
-      @media (max-width: 575px) {
+      span.xs-inline-none {
+        display: none;
+      }
+      
+      /* tablet + desktop */
+      @media (min-width: ${defaultTheme.tablet.breakpoints}px)) {
         span.xs-inline {
-          display: inline;
-        }
-        span.xs-inline-none {
           display: none;
+        }
+
+        span.xs-inline-none {
+          display: inline;
         }
       }
 
