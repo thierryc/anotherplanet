@@ -1,10 +1,10 @@
-import { PureComponent } from 'react'
+import { Component } from 'react'
 import ReactDOM from 'react-dom'
 import * as THREE from 'three'
 
 //import WAGNER from '../bower_components/Wagner/Wagner'
 
-export default class WebGl extends PureComponent {
+export default class WebGl extends Component {
   constructor(props) {
     super(props)
     this.resizeHandler = this.resizeHandler.bind(this)

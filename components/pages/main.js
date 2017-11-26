@@ -1,10 +1,10 @@
-import { PureComponent } from 'react'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 
 // -----------------------------------------------
 
-export default class Main extends PureComponent {
+export default class Main extends Component {
   render () {
     return (<div>
       <Head>
