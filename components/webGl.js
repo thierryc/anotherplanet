@@ -77,7 +77,7 @@ export default class WebGl extends PureComponent {
     	}
     )
     this.three.stars = []
-    for (var z = -1000; z < 5000; z += 25 ) {
+    for (var z = -500; z < 5500; z += 45 ) {
 			// Make a sphere (exactly the same as before).
 			const sphere = new THREE.Mesh(star.geometry, star.material)
 			// This time we give the sphere random x and y positions between -500 and 500
@@ -127,14 +127,14 @@ export default class WebGl extends PureComponent {
       return
     }
 		//this.three.camera.lookAt( this.three.scene.position );
-    if (prevProps.timecontrol !== this.props.timecontrol) {
-      const zpos = this.easeOut(this.props.timecontrol, 2000, 3)
+    if (prevProps.scrollcontrol !== this.props.scrollcontrol) {
+      const zpos = this.easeOut(this.props.scrollcontrol, 2000, 3)
       this.three.camera.position.z = zpos * -5000 + 6250
       this.aplogo.position.y = zpos * -400 + 100
       this.aplogo.position.z = zpos * -4500 + 4500
       this.apLogoCoposent.material.opacity = 1 - zpos //or any other value you like
       //this.aplogo.rotation.y = (zpos * -0.5) + 0.5
-      this.three.camera.position.y = this.props.timecontrol * -0.5
+      this.three.camera.position.y = this.props.scrollcontrol * -0.5
       this.three.renderer.render(this.three.scene, this.three.camera)
     }
   }
@@ -157,7 +157,7 @@ export default class WebGl extends PureComponent {
   }
 
   render() {
-    const { className, timecontrol, ...props } = this.props;
+    const { className, scrollcontrol, ...props } = this.props;
     const classNames = ['heroCanvasContainer', className].join(' ');
     return (
       <div ref="container" className={`${classNames}`} {...props}>

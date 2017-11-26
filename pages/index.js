@@ -12,6 +12,7 @@ import { Container, Row, Cell } from '../components/Next-React-Components/ap-lay
 import ContactList from '../components/pages/contact-list'
 import GlobalStyles from '../components/styles'
 import defaultTheme from '../components/Next-React-Components/ap-layout-grid/default-theme'
+import ScrollIcon from '../components/pages/scroll-icon'
 // SVG
 import Satellite from '../svgs/satellite.svg'
 import Telescope from '../svgs/telescope.svg'
@@ -127,10 +128,10 @@ export default class Index extends Component {
           <main className="homepage">
 
             <section className='hero'>
-              <WebGlNoSSR timecontrol={this.state.scrollY} className='webGlBg' />
+              <WebGlNoSSR scrollcontrol={this.state.scrollY} className='webGlBg' />
               <DetectBrowser />
               <div
-                className={'scroll-view ' + ((this.state.scrollY > this.state.viewport.h) ? 'relase' : (this.state.scrollY < this.state.viewport.h) ? 'fix' : '')}
+                className={'scroll-view ' + ((this.state.scrollY < this.state.viewport.h) ? 'fix' : 'relase' )}
                 >
                 <div className='main-name'>
                   <h1>Another Planet.io</h1>
@@ -139,6 +140,9 @@ export default class Index extends Component {
                   <p>Thierry Charbonnel <span className={ 'xs-inline-none' }>– </span><br className={ 'xs-inline' }/>UX / UI and Code Designer<br/>
                   <span style={{ opacity: 0.5, fontSize: '0.9em' }}>NYC + Paris</span></p>
                 </div>
+              </div>
+              <div className='scroll-icon'>
+                <ScrollIcon scrollcontrol={this.state.scrollY} />
               </div>
             </section>
 
@@ -280,7 +284,7 @@ export default class Index extends Component {
             }
 
             .scroll-view {
-              position: fixed;
+              position: absolute;
               top: 0;
               width: 100%;
               height: 100vh;
@@ -290,11 +294,13 @@ export default class Index extends Component {
             }
 
             .scroll-view.fix {
+              position: fixed;
               top: 0;
               opacity: 1;
             }
 
             .scroll-view.relase {
+              position: fixed;
               opacity: 0;
               top: 0;
             }
@@ -323,7 +329,7 @@ export default class Index extends Component {
             }
 
             .scroll-view.relase h1 {
-              letter-spacing: .4em;;
+              letter-spacing: .4em;
             }
 
             .plugins-link {
@@ -341,19 +347,6 @@ export default class Index extends Component {
               text-align: center;
               font-family: sans-serif;
               font-size: 48px;
-            }
-
-            .hello {
-              font: 15px Helvetica, Arial, sans-serif;
-              background: #ffffff;
-              opacity: 0;
-              padding: 100px;
-              text-align: center;
-              transition: 100ms ease-in background;
-            }
-
-            .hello:hover {
-              background: #ccc;
             }
 
             .intro, .contact {
