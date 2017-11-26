@@ -23,6 +23,7 @@
   },
   "homepage": "https://gitlab.com/anotherplanet/anotherplanet#README",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
     "d3": "^4.11.0",
     "deepmerge": "^2.0.1",
