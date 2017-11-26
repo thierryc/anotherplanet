@@ -81,21 +81,32 @@ export default () => (
       }
 
       /* utils */
-      span.xs-inline {
+      .xs-inline {
         display: inline;
       }
-      span.xs-inline-none {
+
+      .xs-block {
+        display: block;
+      }
+
+      .xs-block-none,
+      .xs-inline-none {
         display: none;
       }
-      
+
       /* tablet + desktop */
-      @media (min-width: ${defaultTheme.tablet.breakpoints}px)) {
-        span.xs-inline {
+      @media (min-width: ${defaultTheme.tablet.breakpoints}px) {
+        .xs-inline,
+        .xs-block {
           display: none;
         }
 
-        span.xs-inline-none {
+        .xs-inline-none {
           display: inline;
+        }
+
+        .xs-block-none {
+          display: block;
         }
       }
 

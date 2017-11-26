@@ -136,7 +136,7 @@ export default class Index extends Component {
                   <h1>Another Planet.io</h1>
                 </div>
                 <div className='baseline'>
-                  <p>Thierry Charbonnel <span className={ 'xs-inline-none' }>– </span><span className={ 'xs-inline' }><br/></span>UX / UI and Code Designer<br/>
+                  <p>Thierry Charbonnel <span className={ 'xs-inline-none' }>– </span><br className={ 'xs-inline' }/>UX / UI and Code Designer<br/>
                   <span style={{ opacity: 0.5, fontSize: '0.9em' }}>NYC + Paris</span></p>
                 </div>
               </div>
