@@ -1,9 +1,9 @@
-
+import defaultTheme from '../Next-React-Components/ap-layout-grid/default-theme'
 
 export default () => (
   <div>
     <style jsx global>{`
-      
+
       @font-face {
         font-family: 'DejaWeb';
         font-weight: normal;
@@ -73,7 +73,7 @@ export default () => (
         -moz-font-feature-settings: 'liga', 'kern';
         direction: ltr;
         text-align: left;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.4446;
         font-weight: 400;
         letter-spacing: 0em;
@@ -97,6 +97,25 @@ export default () => (
         span.xs-inline-none {
           display: none;
         }
+      }
+
+      /* tablet */
+      @media (min-width: ${defaultTheme.tablet.breakpoints}px) and (max-width: ${(defaultTheme.desktop.breakpoints - 1)}px) {
+
+      }
+
+      /* desktop */
+      @media (min-width: ${defaultTheme.desktop.breakpoints}px) {
+
+      }
+
+      @media only print
+      {
+        body {
+          background-color: #FFFFFF;
+          color: #000000;
+        }
+        body:after { content: "Than you to print this page!"; }
       }
 
     `}</style>

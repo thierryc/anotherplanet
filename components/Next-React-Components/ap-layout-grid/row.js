@@ -31,7 +31,7 @@ export default ({children, grid = {}, ...props}) => {
           }
         }
 
-        @supports(display: gridoff) {
+        @supports(display: grid) {
           div {
             display: grid;
             margin: 0;

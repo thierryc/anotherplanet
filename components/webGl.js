@@ -127,14 +127,14 @@ export default class WebGl extends PureComponent {
       return
     }
 		//this.three.camera.lookAt( this.three.scene.position );
-    if (prevProps.timeControl !== this.props.timeControl) {
-      const zpos = this.easeOut(this.props.timeControl, 2000, 3)
+    if (prevProps.timecontrol !== this.props.timecontrol) {
+      const zpos = this.easeOut(this.props.timecontrol, 2000, 3)
       this.three.camera.position.z = zpos * -5000 + 6250
       this.aplogo.position.y = zpos * -400 + 100
       this.aplogo.position.z = zpos * -4500 + 4500
       this.apLogoCoposent.material.opacity = 1 - zpos //or any other value you like
       //this.aplogo.rotation.y = (zpos * -0.5) + 0.5
-      this.three.camera.position.y = this.props.timeControl * -0.5
+      this.three.camera.position.y = this.props.timecontrol * -0.5
       this.three.renderer.render(this.three.scene, this.three.camera)
     }
   }
@@ -157,38 +157,28 @@ export default class WebGl extends PureComponent {
   }
 
   render() {
-
+    const { className, timecontrol, ...props } = this.props;
+    const classNames = ['heroCanvasContainer', className].join(' ');
     return (
-      <div ref="container" className="heroCanvasContainer">
-        { /*
-          <div className="counter">{this.props.timeControl}</div>
-          */}
-        <style jsx>{`
+      <div ref="container" className={`${classNames}`} {...props}>
+      <style jsx>{`
 
-            .heroCanvasContainer {
-              position: fixed;
-              width: 100%;
-              height: 100vh;
-              top: 0;
-              left: 0;
-              z-index: -2;
-            }
-            .counter {
-              position: fixed;
-              width: 100%;
+          .heroCanvasContainer {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -2;
+          }
 
-              bottom: 0;
-              left: 0;
-            }
+          .heroCanvasContainer :global(canvas) {
+            width: 100%;
+            height: 100%
+          }
 
-            .heroCanvasContainer :global(canvas) {
-              width: 100%;
-              height: 100%
-            }
-
-        `}</style>
-      </div>
-
+      `}</style>
+    </div>
     );
   }
 }

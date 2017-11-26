@@ -84,7 +84,7 @@ export default ({children = {}, theme = {}, phone = null, tablet = null, desktop
           }
         }
 
-        @supports(display: gridoff) {
+        @supports(display: grid) {
 
           div {
             margin: 0;

@@ -2,7 +2,7 @@ import { Component } from 'react'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 // utils
-import { logEvent } from '../utils/analytics'
+import { logEvent, outboundEvent } from '../utils/analytics'
 // Config
 import config from '../site-config'
 // Components
@@ -11,6 +11,7 @@ import ScrollHandler from '../components/scrollHandler'
 import { Container, Row, Cell } from '../components/Next-React-Components/ap-layout-grid'
 import ContactList from '../components/pages/contact-list'
 import GlobalStyles from '../components/styles'
+import defaultTheme from '../components/Next-React-Components/ap-layout-grid/default-theme'
 // SVG
 import Satellite from '../svgs/satellite.svg'
 import Telescope from '../svgs/telescope.svg'
@@ -69,7 +70,6 @@ export default class Index extends Component {
     }
     this.scrollHandler = this.scrollHandler.bind(this)
     this.getViewport = this.getViewport.bind(this)
-    console.log({...props});
   }
 
   componentDidMount() {
@@ -127,7 +127,7 @@ export default class Index extends Component {
           <main className="homepage">
 
             <section className='hero'>
-              <WebGlNoSSR timeControl={this.state.scrollY} />
+              <WebGlNoSSR timecontrol={this.state.scrollY} className='webGlBg' />
               <DetectBrowser />
               <div
                 className={'scroll-view ' + ((this.state.scrollY > this.state.viewport.h) ? 'relase' : (this.state.scrollY < this.state.viewport.h) ? 'fix' : '')}
@@ -148,7 +148,7 @@ export default class Index extends Component {
                   <div className="intro">
                     <p>I am Thierry Charbonnel, a Designer based in NYC. Specializing in <b>front-end web development</b>, prototyping and <b>UX/UI design</b>.</p>
                     <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and Data Visualization.</p>
-                    <p>I am thinking about the intersection of technology + design.</p>
+                    <p>I am thinking about the intersection of <nobr>technology + design.</nobr></p>
                     <p>My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.</p>
                   </div>
                 </Cell>
@@ -160,21 +160,21 @@ export default class Index extends Component {
                 <Cell tablet={8} desktop={12}>
                   <Telescope />
                   <p>Beyond the scene</p>
-                  <p className="github"><a href={ config.publicRepository } target="_blank" rel="noopener">Browse this React, Three.js and Next.js website code on Github</a></p>
+                  <p className="github"><a href={ config.publicRepository } onClick={outboundEvent} target="_blank" rel="noopener">Browse this React, Three.js and Next.js website code on Github</a></p>
                 </Cell>
               </Row>
               <Row className="about-icons">
                 <Cell phone={2} tablet={4} desktop={3}>
-                  <a href="https://reactjs.org/"><ReactLogo /></a>
+                  <a href="https://reactjs.org/" onClick={outboundEvent} title="React is a JavaScript library for building user interfaces"><ReactLogo /></a>
                 </Cell>
                 <Cell phone={2} tablet={4} desktop={3}>
-                  <a href="https://github.com/zeit/next.js/"><NextLogo /></a>
+                  <a href="https://github.com/zeit/next.js/" onClick={outboundEvent} title="Next.js is a minimalistic framework for server-rendered React applications."><NextLogo /></a>
                 </Cell>
                 <Cell phone={2} tablet={4} desktop={3}>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><JsLogo /></a>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" onClick={outboundEvent} title="JavaScript (JS) is a lightweight interpreted or JIT-compiled programming language with first-class functions."><JsLogo /></a>
                 </Cell>
                 <Cell phone={2} tablet={4} desktop={3}>
-                  <a href="https://threejs.org"><ThreejsLogo /></a>
+                  <a href="https://threejs.org" onClick={outboundEvent} title="three.js is a WebGl framework."><ThreejsLogo /></a>
                 </Cell>
               </Row>
             </Container>
@@ -184,7 +184,7 @@ export default class Index extends Component {
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <p className="icon-separator"><Satellite /></p>
                   <div className="contact">
-                    <p>I’m always happy <a href={ config.socialLinks.email.link }>to be involved</a> into interesting projects.</p>
+                    <p>I’m always happy <a onClick={outboundEvent} href={ config.socialLinks.email.link }>to be involved</a> into interesting projects.</p>
                     <p><b>Say hello:</b> <ContactList data={ config.socialLinks }/>
                     </p>
                   </div>
@@ -337,25 +337,10 @@ export default class Index extends Component {
               text-transform: uppercase;
             }
 
-            @media (min-width: 576px) {
-              h1 {
-                font-size: 32px;
-                letter-spacing: .9em;
-              }
-            }
-
             h2 {
               text-align: center;
               font-family: sans-serif;
               font-size: 48px;
-            }
-
-            @media (min-width: 576px) {
-              h2 {
-                text-align: center;
-                font-family: sans-serif;
-                font-size: 96px;
-              }
             }
 
             .hello {
@@ -382,17 +367,50 @@ export default class Index extends Component {
               text-align: left;
             }
 
-            @media (min-width: 576px) {
+            /* tablet */
+            @media (min-width: ${defaultTheme.tablet.breakpoints}px) {
+
+              h1 {
+                font-size: 32px;
+                letter-spacing: .9em;
+              }
+
+              h2 {
+                text-align: center;
+                font-family: sans-serif;
+                font-size: 64px;
+              }
+
+              .intro p, .contact p {
+                font-size: 24px;
+                line-height: 40px;
+                text-align: center;
+              }
+
+            }
+
+            /* desktop */
+            @media (min-width: ${defaultTheme.desktop.breakpoints}px) {
+
+              h2 {
+                text-align: center;
+                font-family: sans-serif;
+                font-size: 96px;
+              }
+
               .intro p, .contact p {
                 font-size: 32px;
                 line-height: 48px;
                 text-align: center;
               }
+
             }
 
             .github {
               text-align: center;
             }
+
+
 
             `}</style>
       </Layout>

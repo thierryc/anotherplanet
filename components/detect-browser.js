@@ -1,6 +1,6 @@
 import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import browser from 'detect-browser'
+import { detect } from 'detect-browser'
 import semver from 'semver'
 
 export default class DetectBrowser extends PureComponent {
@@ -11,10 +11,9 @@ export default class DetectBrowser extends PureComponent {
 
   componentDidMount() {
     if (typeof window !== 'undefined') {
+      const browser = detect();
       if (browser) {
         this.setState({ browser: browser })
-        console.log(browser.name);
-        console.log(browser.version);
       }
     }
   }
@@ -26,7 +25,7 @@ export default class DetectBrowser extends PureComponent {
   render() {
     // deferred-styles
     if (
-      browser.name == 'ie' && semver.lt(browser.version, '10.0.0')
+      this.state.browser.name == 'ie' && semver.lt(this.state.browser.version, '10.0.0')
     ) {
       return (
         <p style={{ textAlign: 'center',  padding: '1em', fontSize: '13px'}}>
