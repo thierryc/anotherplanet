@@ -151,9 +151,9 @@ export default class Index extends Component {
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="intro">
                     <p>I am Thierry Charbonnel, a Designer based in NYC. Specializing in <b>front-end web development</b>, prototyping and <b>UX/UI design</b>.</p>
-                    <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and Data Visualization.</p>
-                    <p>I am thinking about the intersection of <nobr>technology + design.</nobr></p>
-                    <p>My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.</p>
+                    <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and data visualization.</p>
+                    <p>I think about the intersection of <nobr>technology + design.</nobr></p>
+                    <p>My specialty is crafting user experiences which help businesses achieve their goals. I am a passionate thinker and creator, and I love what I do.</p>
                   </div>
                 </Cell>
               </Row>
