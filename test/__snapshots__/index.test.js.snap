@@ -122,12 +122,12 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
               <p
                 className="jsx-2012746867"
               >
-                My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and Data Visualization.
+                My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and data visualization.
               </p>
               <p
                 className="jsx-2012746867"
               >
-                I am thinking about the intersection of 
+                I think about the intersection of 
                 <nobr
                   className="jsx-2012746867"
                 >
@@ -137,7 +137,7 @@ exports[`With Snapshot Testing App shows "Another Planet.io" 1`] = `
               <p
                 className="jsx-2012746867"
               >
-                My specialty is crafting user experiences which help businesses achieve their goals. I am passionate thinkers and makers, and I love what I do.
+                My specialty is crafting user experiences which help businesses achieve their goals. I am a passionate thinker and creator, and I love what I do.
               </p>
             </div>
           </div>
