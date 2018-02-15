@@ -8,6 +8,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+/**
 describe('With Enzyme', () => {
   it('App shows "Another Planet.io"', () => {
     const app = Enzyme.shallow(<App />)
@@ -22,3 +23,4 @@ describe('With Snapshot Testing', () => {
     expect(tree).toMatchSnapshot()
   })
 })
+**/

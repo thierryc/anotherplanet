@@ -71,5 +71,6 @@ plan.remote('deploy', function(remote) {
 });
 
 plan.remote('test', function(remote) {
-
+  local.log('Run clean and test');
+  local.exec('npm run test');
 });
