@@ -18,3 +18,5 @@ BingSiteAuth.xml
 .babelrc-back
 pages.back
 note.md
+
+package-lock.json
