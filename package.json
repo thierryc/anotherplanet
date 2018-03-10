@@ -27,10 +27,10 @@
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
     "d3": "^4.13.0",
-    "deepmerge": "^2.0.1",
-    "detect-browser": "^2.0.0",
+    "deepmerge": "^2.1.0",
+    "detect-browser": "^2.1.0",
     "next": "^4.2.3",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-ga": "^2.4.1",
@@ -46,8 +46,8 @@
   "devDependencies": {
     "@mapbox/babel-plugin-transform-jsxtreme-markdown": "^0.4.2",
     "@material/layout-grid": "^0.24.0",
-    "babel-eslint": "^8.2.1",
-    "babel-plugin-css-modules-transform": "^1.4.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-css-modules-transform": "^1.5.0",
     "babel-plugin-inline-react-svg": "^0.4.0",
     "babel-plugin-root-import": "^5.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
@@ -64,7 +64,7 @@
     "processmd": "^4.2.0",
     "react-addons-test-utils": "15.6.2",
     "react-test-renderer": "^16.2.0",
-    "styled-jsx-plugin-sass": "^0.2.2"
+    "styled-jsx-plugin-sass": "^0.2.3"
   },
   "jest": {
     "testEnvironment": "node",
