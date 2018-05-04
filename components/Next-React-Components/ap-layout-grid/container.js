@@ -28,14 +28,15 @@ export default class Container extends Component {
         `}</style>
         <style jsx>{`
 
-          div { /* phone */
+/*        phone */
+          div {
             margin: 0;
             padding: ${g.phone.margin}px;
             ${maxWidthString}
             ${alignString}
           }
 
-          /* tablet */
+/*        tablet */
           @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) { /* desktop */
             div {
               padding: ${g.tablet.margin}px;

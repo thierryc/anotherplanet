@@ -80,7 +80,7 @@ export default () => (
         font-style: normal
       }
 
-      /* utils */
+/*    utils */
       .xs-inline {
         display: inline;
       }
@@ -94,7 +94,7 @@ export default () => (
         display: none;
       }
 
-      /* tablet + desktop */
+/*    tablet + desktop */
       @media (min-width: ${defaultTheme.tablet.breakpoints}px) {
         .xs-inline,
         .xs-block {
@@ -110,12 +110,12 @@ export default () => (
         }
       }
 
-      /* tablet */
+/*    tablet */
       @media (min-width: ${defaultTheme.tablet.breakpoints}px) and (max-width: ${(defaultTheme.desktop.breakpoints - 1)}px) {
 
       }
 
-      /* desktop */
+/*    desktop */
       @media (min-width: ${defaultTheme.desktop.breakpoints}px) {
 
       }

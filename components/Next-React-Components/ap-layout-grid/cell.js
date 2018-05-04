@@ -44,7 +44,7 @@ export default ({children = {}, theme = {}, phone = null, tablet = null, desktop
       {children}
       <style jsx>{`
 
-        /* phone */
+/*         phone */
         div {
           width: ${phoneCellWidtPercent}%;
           width: calc(${phoneCellWidtPercent}% - ${g.phone.gutter}px);
@@ -68,7 +68,7 @@ export default ({children = {}, theme = {}, phone = null, tablet = null, desktop
           align-self: stretch;
         }
 
-        /* tablet */
+/*      tablet */
         @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) {
           div {
             width: ${tabletCellWidtPercent}%;
@@ -76,7 +76,7 @@ export default ({children = {}, theme = {}, phone = null, tablet = null, desktop
           }
         }
 
-        /* desktop */
+/*      desktop */
         @media (min-width: ${g.desktop.breakpoints}px) {
           div {
             width: ${desktopCellWidtPercent}%;
@@ -100,14 +100,14 @@ export default ({children = {}, theme = {}, phone = null, tablet = null, desktop
             align-self: end;
           }
 
-          /* tablet */
+/*        tablet */
           @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) {
             div {
               grid-column-end: span ${g.tablet.span};
             }
           }
 
-          /* desktop */
+/*        desktop */
           @media (min-width: ${g.desktop.breakpoints}px) {
             div {
               grid-column-end: span ${g.desktop.span};

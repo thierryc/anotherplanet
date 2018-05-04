@@ -211,7 +211,7 @@ export default class Index extends Component {
               text-decoration: none;
             }
 
-            /* mobile first */
+/*           mobile first */
             .hero {
               height: 360px;
               height: 360vh;
@@ -221,14 +221,14 @@ export default class Index extends Component {
               text-align: center;
             }
 
-            /* desktop */
+/*          desktop */
             @media (min-width: 576px) {
               .hero {
                 height: 210vh;
               }
             }
 
-            /*  arrow icon */
+/*           arrow icon */
             .scroll-icon {
               position: absolute;
               bottom: 24px;
@@ -240,7 +240,7 @@ export default class Index extends Component {
               position: fixed;
             }
 
-            /*  arrow animation */
+/*          arrow animation */
             @keyframes arrow {
               0% { opacity: 0 }
               40% { opacity: .5 }
@@ -361,7 +361,7 @@ export default class Index extends Component {
               text-align: left;
             }
 
-            /* tablet */
+/*          tablet */
             @media (min-width: ${defaultTheme.tablet.breakpoints}px) {
 
               h1 {
@@ -383,7 +383,7 @@ export default class Index extends Component {
 
             }
 
-            /* desktop */
+/*          desktop */
             @media (min-width: ${defaultTheme.desktop.breakpoints}px) {
 
               h2 {
@@ -403,8 +403,6 @@ export default class Index extends Component {
             .github {
               text-align: center;
             }
-
-
 
             `}</style>
       </Layout>

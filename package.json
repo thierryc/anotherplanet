@@ -39,13 +39,12 @@
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
     "semver": "^5.5.0",
-    "styled-jsx": "^2.2.5",
+    "styled-jsx": "^2.2.6",
     "styled-jsx-plugin-postcss": "^0.1.2",
     "three": "^0.86.0"
   },
   "devDependencies": {
     "@mapbox/babel-plugin-transform-jsxtreme-markdown": "^0.4.2",
-    "@material/layout-grid": "^0.24.0",
     "babel-eslint": "^8.2.2",
     "babel-plugin-css-modules-transform": "^1.5.0",
     "babel-plugin-inline-react-svg": "^0.4.0",
@@ -56,15 +55,13 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "flightplan": "^0.6.17",
     "jest": "^22.4.2",
-    "node-sass": "^4.5.3",
     "postcss": "^6.0.19",
     "postcss-cssnext": "^3.1.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-nested": "^2.1.2",
     "processmd": "^4.2.0",
     "react-addons-test-utils": "15.6.2",
-    "react-test-renderer": "^16.2.0",
-    "styled-jsx-plugin-sass": "^0.2.3"
+    "react-test-renderer": "^16.2.0"
   },
   "jest": {
     "testEnvironment": "node",

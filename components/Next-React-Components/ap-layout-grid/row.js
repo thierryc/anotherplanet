@@ -17,14 +17,14 @@ export default ({children, grid = {}, ...props}) => {
           margin: ${(g.phone.margin / 2 * -1)}px;
         }
 
-        /* tablet */
+/*      tablet */
         @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) {
           div {
             margin: ${(g.tablet.margin / 2 * -1)}px;
           }
         }
 
-        /* desktop */
+/*      desktop */
         @media (min-width: ${g.desktop.breakpoints}px) {
           div {
             margin: ${(g.desktop.margin / 2 * -1)}px;
@@ -39,7 +39,7 @@ export default ({children, grid = {}, ...props}) => {
             grid-template-columns: repeat(${g.phone.columns}, minmax(0, 1fr));
           }
 
-          /* tablet */
+/*        tablet */
           @media (min-width: ${g.tablet.breakpoints}px) and (max-width: ${(g.desktop.breakpoints - 1)}px) {
             div {
               grid-gap: ${g.tablet.gutter}px;
@@ -47,7 +47,7 @@ export default ({children, grid = {}, ...props}) => {
             }
           }
 
-          /* desktop */
+/*        desktop */
           @media (min-width: ${g.desktop.breakpoints}px) {
             div {
               grid-gap: ${g.desktop.gutter}px;
