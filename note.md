@@ -51,6 +51,8 @@ Step 1: Account Info
 
 email: thierry@a...t.io
 
+openssl rsa -in account.key -pubout
+
 5. copy medaitemple CRS and paste
 
 Step 2: Certificate Signing Request
