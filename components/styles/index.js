@@ -63,7 +63,7 @@ export default () => (
       }
 
       body {
-        font-family: 'DejaWeb';
+        font-family: 'DejaWeb', Sans-Serif;
         padding: 0;
         margin: 0;
         font-synthesis: none;

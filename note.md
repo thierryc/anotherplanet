@@ -38,8 +38,19 @@ openssl genrsa 4096 > account.key
 
 3. get your private key
 
+email is thierry@autreplanete.com
+
 ```
+# Another planet
 openssl rsa -in account.key -pubout
+
+#AP
+openssl rsa -in autreplanete.com.key -pubout
+
+#IMAGE AP.CX
+openssl rsa -in ap.cx.key -pubout
+
+
 
 ```
 
