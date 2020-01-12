@@ -1,3 +1,4 @@
+import React from "react"
 import ScrollIcon from '../../svgs/scroll-icon.svg'
 
 export default ({scrollcontrol = 0, ...props}) => (

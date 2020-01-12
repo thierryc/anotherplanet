@@ -4,7 +4,13 @@
       "presets": [
         [
           "next/babel",
-          "stage-0"
+          {
+            "preset-env": {
+                "targets": {
+                  "browsers": "> 5%"
+                }
+              }
+           }
         ]
       ],
       "plugins": [
@@ -15,7 +21,13 @@
       "presets": [
         [
           "next/babel",
-          "stage-0"
+          {
+            "preset-env": {
+                "targets": {
+                  "browsers": "> 5%"
+                }
+              }
+           }
         ]
       ],
       "plugins": [

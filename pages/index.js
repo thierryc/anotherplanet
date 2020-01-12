@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 // utils
@@ -154,7 +154,7 @@ window['_fs_namespace'] = 'FS';
                   <h1>Another Planet.io</h1>
                 </div>
                 <div className='baseline'>
-                  <p>Thierry Charbonnel <span className={ 'xs-inline-none' }>– </span><br className={ 'xs-inline' }/>UX / UI and Code Designer<br/>
+                  <p>Thierry Charbonnel <span className={ 'xs-inline-none' }>– </span><br className={ 'xs-inline' }/>UI/UX and Code Designer<br/>
                   <span style={{ opacity: 0.5, fontSize: '0.9em' }}>NYC + Paris</span></p>
                 </div>
               </div>
