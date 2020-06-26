@@ -174,7 +174,7 @@ window['_fs_namespace'] = 'FS';
               <Row>
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="intro">
-                    <p>I am Thierry Charbonnel, a Designer based in NY. Specializing in <a href="https://jamstack.wtf"><b>JAMstack development</b></a>, prototyping and <b>UX/UI design</b>.</p>
+                    <p>I am Thierry Charbonnel, a Designer based in NY. Specializing in <b><a href="https://jamstack.wtf">JAMstack</a> development</b>, prototyping and <b>UX/UI design</b>.</p>
                     <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and data visualization.</p>
                     <p>I think about the intersection of <nobr>technology + design.</nobr></p>
                     <p>My specialty is crafting user experiences which help businesses achieve their goals. I am a passionate thinker and maker, and I love what I do.</p>

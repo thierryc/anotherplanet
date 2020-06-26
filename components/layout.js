@@ -39,7 +39,7 @@ export default class Layout extends Component {
         { children }
 
         <footer>
-          <p>© 1994 - {new Date().getFullYear()} Thierry Charbonnel - All Rights Reserved</p>
+          <p>{new Date().getFullYear()} Thierry Charbonnel.</p>
         </footer>
 
         <style jsx>{`
