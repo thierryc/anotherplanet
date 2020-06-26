@@ -143,6 +143,7 @@ window['_fs_namespace'] = 'FS';
         </Head>
         <ScrollHandler onScrollUpdate={this.scrollHandler}>
           <main className="homepage">
+            <p style={{ textAlign: 'center' }}>Black Lives Matter.<a href="https://support.eji.org/give/153413/#!/donation/checkout" title="Support the Equal Justice Initiative" data-part-id="link">Support the Equal Justice Initiative.</a></p>
 
             <section className='hero'>
               <WebGlNoSSR scrollcontrol={this.state.scrollY} className='webGlBg' />
@@ -222,6 +223,12 @@ window['_fs_namespace'] = 'FS';
               background-color: #282d47;
               color: #cdd3db;
             }
+
+            :global(body.blm){
+              filter: grayscale(100%);
+              z-index: 1;
+            }
+
 
             a {
               color: #FFFFFF;

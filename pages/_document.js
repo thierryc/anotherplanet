@@ -8,7 +8,7 @@ export default class CustomDocument extends Document {
     return (<html lang='en-US'>
       <Head>
       </Head>
-      <body>
+      <body className="blm">
         <Main />
         <NextScript />
       </body>

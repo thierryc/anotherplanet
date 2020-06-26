@@ -18,6 +18,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga', 'kern';
   -moz-font-feature-settings: 'liga', 'kern';
   direction: ltr;
   text-align: left;
@@ -25,7 +26,9 @@ body {
   line-height: 1.4446;
   font-weight: 400;
   letter-spacing: 0em;
-  font-style: normal
+  font-style: normal;
+  filter: grayscale(100%);
+  z-index: 1;
 }
 
 a {
