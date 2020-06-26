@@ -170,6 +170,8 @@ export default class WebGl extends Component {
             top: 0;
             left: 0;
             z-index: -2;
+            filter: grayscale(100%); 
+            filter: grayscale(${Math.max(0, 100 - (this.props.scrollcontrol / 10))}%);
           }
 
           .heroCanvasContainer :global(canvas) {
