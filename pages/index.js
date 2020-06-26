@@ -162,7 +162,7 @@ window['_fs_namespace'] = 'FS';
                 </div>
                 <div className='baseline'>
                   <p>Thierry Charbonnel <span className={ 'xs-inline-none' }>– </span><br className={ 'xs-inline' }/>UI/UX and Code Designer<br/>
-                  <span style={{ opacity: 0.5, fontSize: '0.9em' }}>NYC + Paris</span></p>
+                  <span style={{ opacity: 0.5, fontSize: '0.9em' }}>NY - USA</span></p>
                 </div>
               </div>
               <div className='scroll-icon'>
@@ -174,7 +174,7 @@ window['_fs_namespace'] = 'FS';
               <Row>
                 <Cell tablet={8} desktop={12} align={'middle'}>
                   <div className="intro">
-                    <p>I am Thierry Charbonnel, a Designer based in NYC. Specializing in <b>front-end web development</b>, prototyping and <b>UX/UI design</b>.</p>
+                    <p>I am Thierry Charbonnel, a Designer based in NY. Specializing in <a href="https://jamstack.wtf"><b>JAMstack development</b></a>, prototyping and <b>UX/UI design</b>.</p>
                     <p>My focus has been on User Experience (UX), responsive design, componentized systems (atomic), graphic design, motion design and data visualization.</p>
                     <p>I think about the intersection of <nobr>technology + design.</nobr></p>
                     <p>My specialty is crafting user experiences which help businesses achieve their goals. I am a passionate thinker and maker, and I love what I do.</p>
@@ -278,13 +278,11 @@ window['_fs_namespace'] = 'FS';
             }
 
             polyline.arrowMiddle {
-              animation: arrow 2s infinite;
-            	animation-delay: -0.5s;
+              animation: arrow 2s infinite -0.5s;
             }
 
             polyline.arrowUp {
-              animation: arrow 2s infinite;
-            	animation-delay: -1s;
+              animation: arrow 2s infinite -1s;
             }
 
             .homepage :global(.ux),
