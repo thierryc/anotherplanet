@@ -8,7 +8,7 @@ export default class CustomDocument extends Document {
     return (<html lang='en-US'>
       <Head>
       </Head>
-      <body className="blm">
+      <body className="blm" style={{ backgroundColor: '#282d47', color: 'white' }}>
         <Main />
         <NextScript />
       </body>
