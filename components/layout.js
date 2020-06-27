@@ -39,7 +39,7 @@ export default class Layout extends Component {
         { children }
 
         <footer>
-          <p>{new Date().getFullYear()} Thierry Charbonnel.</p>
+          <p>{new Date().getFullYear()} - Made in upstate NY by Thierry Charbonnel.</p>
         </footer>
 
         <style jsx>{`

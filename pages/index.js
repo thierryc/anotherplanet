@@ -142,15 +142,20 @@ window['_fs_namespace'] = 'FS';
           }</script>
         </Head>
         <ScrollHandler onScrollUpdate={this.scrollHandler}>
-          <main className="homepage">
-            <p style={{ 
+          <p style={{ 
               textAlign: 'center', 
               backgroundColor: 'black', 
               padding: '1em', 
               marginTop: 0,
               width: '100%',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              zIndex:2,
            }}>Black Lives Matter. <a href="https://support.eji.org/give/153413/#!/donation/checkout" title="Support the Equal Justice Initiative" data-part-id="link">Support the Equal Justice Initiative.</a></p>
 
+          <main className="homepage">
             <section className='hero'>
               <WebGlNoSSR scrollcontrol={this.state.scrollY} className='webGlBg' />
               <DetectBrowser />

@@ -9,6 +9,8 @@ export default ({scrollcontrol = 0, ...props}) => (
       div {
         opacity: ${ (scrollcontrol < 100) ? 1.0 : 0.0 };
         transition: opacity 1s ease;
+        width: 100px;
+        margin: 0 auto;
       }
 
       div :global(svg > g) {
